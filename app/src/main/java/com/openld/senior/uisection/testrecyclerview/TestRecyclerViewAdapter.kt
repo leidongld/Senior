@@ -1,8 +1,8 @@
 package com.openld.senior.uisection.testrecyclerview
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.NonNull
@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.openld.senior.R
 import com.openld.senior.uisection.testrecyclerview.listeners.FruitClickListener
+import com.openld.senior.uisection.testrecyclerview.listeners.FruitItemTouchMoveListener
 import com.openld.senior.uisection.testrecyclerview.listeners.FruitLongClickListener
+import com.openld.senior.uisection.testrecyclerview.listeners.StartDragFruitListener
+import java.util.*
 
 /**
  * author: lllddd
@@ -20,13 +23,14 @@ import com.openld.senior.uisection.testrecyclerview.listeners.FruitLongClickList
  * description:测试RecyclerView的适配器
  */
 class TestRecyclerViewAdapter(
-    @NonNull val context: Context,
-    @NonNull val fruitList: List<FruitBean>
+    @NonNull val fruitList: List<FruitBean>,
+    @NonNull val dragListener: StartDragFruitListener
 ) :
-    Adapter<TestRecyclerViewAdapter.Companion.ViewHolder>() {
+    Adapter<TestRecyclerViewAdapter.Companion.ViewHolder>(), FruitItemTouchMoveListener {
 
-    private val mContext = context
     private val mFruitList: MutableList<FruitBean> = fruitList as MutableList<FruitBean>
+
+    private val mDragListener = dragListener
 
     // 点击监听器
     private lateinit var mFruitClickListener: FruitClickListener
@@ -39,7 +43,7 @@ class TestRecyclerViewAdapter(
         viewType: Int
     ): ViewHolder {
         val view =
-            LayoutInflater.from(mContext).inflate(
+            LayoutInflater.from(parent.context).inflate(
                 R.layout.item_test_recycler_view, parent, false
             )
         return ViewHolder(view)
@@ -49,26 +53,25 @@ class TestRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val fruit = mFruitList[position]
 
-        if (fruit == null) {
-            return
-        }
-
         holder.imgFruit.setImageResource(fruit.image)
-        holder.txtFruitName.setText(fruit.name)
-        holder.txtFruitPrice.setText("${fruit.price} 元")
+        holder.txtFruitName.text = fruit.name
+        holder.txtFruitPrice.text = "${fruit.price} 元"
 
-        holder.imgFruit.setOnClickListener {
-            if (mFruitClickListener != null) {
-                mFruitClickListener.onFruitClick(fruit, holder.layoutPosition)
-            }
+        holder.itemView.setOnClickListener {
+            mFruitClickListener.onFruitClick(fruit, holder.layoutPosition)
         }
 
-        holder.imgFruit.setOnLongClickListener {
-            if (mFruitLongClickListener != null) {
-                mFruitLongClickListener.onFruitLongCLick(fruit, holder.layoutPosition)
-            }
+        holder.itemView.setOnLongClickListener {
+            mFruitLongClickListener.onFruitLongCLick(fruit, holder.layoutPosition)
             true
         }
+
+        holder.imgFruit.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                mDragListener.onFruitStartDrag(holder)
+            }
+            true
+        })
     }
 
     override fun getItemCount(): Int {
@@ -128,5 +131,18 @@ class TestRecyclerViewAdapter(
             val txtFruitName: AppCompatTextView = itemView.findViewById(R.id.txt_fruit_name)
             val txtFruitPrice: AppCompatTextView = itemView.findViewById(R.id.txt_fruit_price)
         }
+    }
+
+    override fun onFruitItemMove(fromPosition: Int, toPosition: Int): Boolean {
+        Collections.swap(mFruitList, fromPosition, toPosition)
+        notifyItemMoved(fromPosition, toPosition)
+        return true
+    }
+
+    override fun onFruitItemRemove(position: Int): Boolean {
+        mFruitList.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeRemoved(position, mFruitList.size)
+        return true
     }
 }

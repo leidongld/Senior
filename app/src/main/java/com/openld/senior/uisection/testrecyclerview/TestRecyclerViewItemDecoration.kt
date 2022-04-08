@@ -1,13 +1,16 @@
 package com.openld.senior.uisection.testrecyclerview
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
+import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.annotation.NonNull
 import androidx.core.view.marginBottom
 import androidx.core.view.marginRight
+import androidx.core.view.marginTop
 import androidx.recyclerview.widget.RecyclerView
 import com.openld.senior.R
 
@@ -18,13 +21,21 @@ import com.openld.senior.R
  */
 class TestRecyclerViewItemDecoration(@NonNull context: Context) : RecyclerView.ItemDecoration() {
     companion object {
-        private val VERTICAL = 0
-        private val HORIZONTAL = 1
+        private val VERTICAL = RecyclerView.VERTICAL
+        private val HORIZONTAL = RecyclerView.HORIZONTAL
     }
+
+
+    private val mContext = context
 
     private var mOrientation = VERTICAL
 
     private var mDivider: Drawable? = context.getDrawable(R.drawable.divider)
+
+    private var mPaint: Paint = Paint().apply {
+        isAntiAlias = true
+        strokeCap = Paint.Cap.ROUND
+    }
 
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         if (mOrientation == VERTICAL) {
@@ -52,8 +63,8 @@ class TestRecyclerViewItemDecoration(@NonNull context: Context) : RecyclerView.I
     }
 
     private fun onDrawHorizontal(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
-        val left = parent.paddingLeft + 20
-        val right = parent.width - parent.paddingRight - 20
+        val left = parent.paddingLeft + 30
+        val right = parent.width - parent.paddingRight - 30
 
         val childCount = parent.childCount
 
@@ -61,22 +72,10 @@ class TestRecyclerViewItemDecoration(@NonNull context: Context) : RecyclerView.I
             val child = parent.getChildAt(index)
 
             val top = (child.bottom + child.marginBottom + child.getTranslationY())
-            val bottom = top + (mDivider?.intrinsicHeight ?: 0)
+            val bottom = top + 5
 
             mDivider?.setBounds(left, top.toInt(), right, bottom.toInt())
             mDivider?.draw(c)
-
-            if (index == 0) {// 销量第一
-                // TODO:  
-            }
-
-            if (index == 1) {// 销量第二
-                // TODO:  
-            }
-
-            if (index == 2) {// 销量第三
-                // TODO:  
-            }
         }
     }
 
@@ -93,10 +92,41 @@ class TestRecyclerViewItemDecoration(@NonNull context: Context) : RecyclerView.I
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        if (mOrientation == VERTICAL) {
-            mDivider?.let { outRect.set(0, 0, 10, it.intrinsicHeight) }
+        if (mOrientation == HORIZONTAL) {
+            mDivider?.let { outRect.set(10, 10, 10, it.intrinsicHeight) }
         } else {
-            mDivider?.let { outRect.set(0, 0, it.intrinsicWidth, 0) }
+            mDivider?.let { outRect.set(10, 10, it.intrinsicWidth, 10) }
+        }
+    }
+
+    override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+//        super.onDrawOver(c, parent, state)
+        val childCount = parent.childCount
+
+        for (index in 0 until childCount) {
+            val child = parent.getChildAt(index)
+
+            if (index == 0) {
+                val bitmap = BitmapFactory.decodeResource(mContext.resources, R.drawable.launcher)
+                c.drawBitmap(bitmap, Rect().apply {
+                    val left = 0
+                    val top = 0
+                    val right = 60
+                    val bottom = 60
+                    set(left, top, right, bottom)
+                }, Rect().apply {
+                    val left = 0
+                    val top = 0
+                    val right = 60
+                    val bottom = 60
+                    set(left, top, right, bottom)
+                }, mPaint)
+            } else if (index == 1) {
+
+
+            } else if (index == 2) {
+
+            }
         }
     }
 }

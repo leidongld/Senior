@@ -4,18 +4,17 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.*
 import com.openld.senior.R
 import com.openld.senior.uisection.testrecyclerview.listeners.FruitClickListener
 import com.openld.senior.uisection.testrecyclerview.listeners.FruitLongClickListener
+import com.openld.senior.uisection.testrecyclerview.listeners.StartDragFruitListener
 
 /**
  * 测试学习一下RecyclerView
  */
-class TestRecyclerViewActivity : AppCompatActivity(), FruitClickListener, FruitLongClickListener {
+class TestRecyclerViewActivity : AppCompatActivity(), FruitClickListener, FruitLongClickListener,
+    StartDragFruitListener {
     private lateinit var mRcv: RecyclerView
 
     private lateinit var mBtnChange: AppCompatButton
@@ -29,6 +28,8 @@ class TestRecyclerViewActivity : AppCompatActivity(), FruitClickListener, FruitL
     private var mFruitList = mutableListOf<FruitBean>()
 
     private var mShowMode = ShowMode.LIST
+
+    private lateinit var mItemTouchHelper: ItemTouchHelper
 
     /**
      * 列表展示的模式
@@ -109,15 +110,18 @@ class TestRecyclerViewActivity : AppCompatActivity(), FruitClickListener, FruitL
      */
     private fun initWidgets() {
         mRcv = findViewById(R.id.rcv)
-        mAdapter = TestRecyclerViewAdapter(this, mFruitList)
+        mAdapter = TestRecyclerViewAdapter(mFruitList, this)
         mAdapter.setFruitClickListener(this)
         mAdapter.setFruitLongClickListener(this)
         // 设置一下默认的动画效果
         mRcv.itemAnimator = DefaultItemAnimator()
         mRcv.addItemDecoration(TestRecyclerViewItemDecoration(this).apply {
-            setOrientation(1)
+            setOrientation(RecyclerView.HORIZONTAL)
         })
         mRcv.adapter = mAdapter
+        mItemTouchHelper = ItemTouchHelper(FruitItemTouchCallback(mAdapter)).apply {
+            attachToRecyclerView(mRcv)
+        }
 
         mBtnChange = findViewById(R.id.btn_change)
 
@@ -144,5 +148,9 @@ class TestRecyclerViewActivity : AppCompatActivity(), FruitClickListener, FruitL
      */
     override fun onFruitLongCLick(fruit: FruitBean, position: Int) {
         Toast.makeText(this, "长按点击了第${position}个水果", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onFruitStartDrag(viewHolder: RecyclerView.ViewHolder) {
+        mItemTouchHelper.startDrag(viewHolder)
     }
 }

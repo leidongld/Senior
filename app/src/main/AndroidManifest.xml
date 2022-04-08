@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Senior">
 
@@ -34,6 +34,12 @@
             android:name=".uisection.testrecyclerview.TestRecyclerViewActivity"
             android:exported="false"
             android:label="测试RecyclerView"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".uisection.testdrawerlayout.TestDrawerLayoutActivity"
+            android:exported="false"
+            android:label="测试DrawerLayout"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>
