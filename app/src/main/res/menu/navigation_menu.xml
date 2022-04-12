@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:title="北方代表水果"
+        tools:ignore="HardcodedText">
+        <menu>
+            <item
+                android:id="@+id/apple"
+                android:icon="@drawable/icon_apple"
+                android:title="苹果"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/berry"
+                android:icon="@drawable/icon_berry"
+                android:title="树莓"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/cherry"
+                android:icon="@drawable/icon_cherry"
+                android:title="樱桃"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/grape"
+                android:icon="@drawable/icon_grape"
+                android:title="葡萄"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/hami_melon"
+                android:icon="@drawable/icon_hami_melon"
+                android:title="哈密瓜"
+                tools:ignore="HardcodedText" />
+        </menu>
+    </item>
+    <item
+        android:title="南方代表水果"
+        tools:ignore="HardcodedText">
+        <menu>
+            <item
+                android:id="@+id/香蕉"
+                android:icon="@drawable/icon_banana"
+                android:title="香蕉"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/durian"
+                android:icon="@drawable/icon_durian"
+                android:title="榴莲"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/peach"
+                android:icon="@drawable/icon_peach"
+                android:title="桃子"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/lemon"
+                android:icon="@drawable/icon_lemon"
+                android:title="柠檬"
+                tools:ignore="HardcodedText" />
+            <item
+                android:id="@+id/mongo"
+                android:icon="@drawable/icon_mongo"
+                android:title="芒果"
+                tools:ignore="HardcodedText" />
+        </menu>
+    </item>
+</menu>
