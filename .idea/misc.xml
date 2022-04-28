@@ -3,16 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/drawable/cbx_background.xml" value="0.1205" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/drawable/divider.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_main.xml" value="0.27807971014492755" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_check_box.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_drawer_layout.xml" value="0.2" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_navigation_view.xml" value="0.2" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_palette.xml" value="0.136" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_recycler_view.xml" value="0.176" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_snack_bar.xml" value="0.15324214792299898" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_text_input_layout.xml" value="0.152" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_tool_bar.xml" value="0.2" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_uimain.xml" value="0.27807971014492755" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/item_fruit_image.xml" value="0.264" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/item_test_recycler_view.xml" value="0.28192371475953565" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/navigation_header_layout.xml" value="0.15476190476190477" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/menu/test_menu.xml" value="0.31025641025641026" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/menu/toolbar_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -30,13 +30,15 @@ class TestSnackBarActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSnackBar(v: View) {
+    private fun showSnackBar(v: View?) {
         val snackBa =
-            Snackbar.make(this, v, "手机马上要爆炸了，是否逃跑？", Snackbar.LENGTH_INDEFINITE).apply {
-                setAction("取消", View.OnClickListener {
-                    Toast.makeText(it.context, "爆炸了！！！", Toast.LENGTH_SHORT).show()
-                })
-                show()
+            v?.let {
+                Snackbar.make(this, it, "手机马上要爆炸了，是否逃跑？", Snackbar.LENGTH_INDEFINITE).apply {
+                    setAction("取消", View.OnClickListener {
+                        Toast.makeText(it.context, "爆炸了！！！", Toast.LENGTH_SHORT).show()
+                    })
+                    show()
+                }
             }
     }
 }

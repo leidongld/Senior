@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.openld.senior">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,49 +17,83 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity,RedundantLabel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- UI部分主页 -->
+        </activity> <!-- UI部分主页 -->
         <activity
             android:name=".uisection.main.UIMainActivity"
             android:exported="false"
             android:label="UI部分主页"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <!-- 测试RecyclerView -->
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" /> <!-- 测试RecyclerView -->
         <activity
             android:name=".uisection.testrecyclerview.TestRecyclerViewActivity"
             android:exported="false"
             android:label="测试RecyclerView"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <!--测试DrawerLayout-->
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" /> <!-- 测试DrawerLayout -->
         <activity
             android:name=".uisection.testdrawerlayout.TestDrawerLayoutActivity"
             android:exported="false"
             android:label="测试DrawerLayout"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!--测试SnackBar-->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" /> <!-- 测试SnackBar -->
         <activity
             android:name=".uisection.testsnackbar.TestSnackBarActivity"
             android:exported="false"
             android:label="测试SnackBar"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <!--测试NavigationView-->
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" /> <!-- 测试NavigationView -->
         <activity
             android:name=".uisection.testnavigationview.TestNavigationViewActivity"
             android:exported="false"
             android:label="测试NavigationView"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".uisection.testtextinputlayout.TestTextInputLayoutActivity"
+            android:exported="false"
+            android:label="测试TextInputLayout"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".uisection.testtoolbar.TestToolBarActivity"
+            android:exported="false"
+            android:label="测试ToolBar"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".uisection.testcheckbox.TestCheckBoxActivity"
+            android:exported="false"
+            android:label="测试CheckBox"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".uisection.testpalette.TestPaletteActivity"
+            android:exported="false"
+            android:label="测试渐变Toolbar"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

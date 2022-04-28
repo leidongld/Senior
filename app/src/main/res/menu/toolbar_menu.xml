@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/toolbar_menu_item1"
+        android:icon="@drawable/icon_peach"
+        android:title="条目一"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction,HardcodedText" />
+    <item
+        android:id="@+id/toolbar_menu_item2"
+        android:icon="@drawable/icon_banana"
+        android:title="条目二"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction,HardcodedText" />
+    <item
+        android:id="@+id/toolbar_menu_item3"
+        android:icon="@drawable/icon_apple"
+        android:title="条目三"
+        app:showAsAction="withText"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/toolbar_menu_item4"
+        android:icon="@drawable/icon_grape"
+        android:title="条目四"
+        app:showAsAction="withText"
+        tools:ignore="HardcodedText" />
+</menu>

@@ -46,7 +46,7 @@ class TestDrawerLayoutActivity : AppCompatActivity(), DrawerListener {
         mDrawerLayout = findViewById(R.id.dly)
         mBtnShowDrawer = findViewById(R.id.btn_show_drawer)
         mBtnHideDrawer = findViewById(R.id.btn_hide_drawer)
-        mToolBar = findViewById(R.id.tool_bar)
+        mToolBar = findViewById(R.id.toolbar)
         setSupportActionBar(mToolBar)
 
         val toggle = ActionBarDrawerToggle(
