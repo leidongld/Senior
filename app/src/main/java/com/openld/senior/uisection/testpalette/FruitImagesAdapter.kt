@@ -11,8 +11,11 @@ import androidx.annotation.NonNull
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.palette.graphics.Palette
+import androidx.palette.graphics.Target
 import androidx.recyclerview.widget.RecyclerView
 import com.openld.senior.R
+import kotlin.math.max
+import kotlin.math.min
 
 class FruitImagesAdapter(@NonNull val fruitImageList: MutableList<FruitImageBean>) :
     RecyclerView.Adapter<FruitImagesAdapter.ViewHolder>() {
@@ -37,10 +40,30 @@ class FruitImagesAdapter(@NonNull val fruitImageList: MutableList<FruitImageBean
         // 调色板，得到Bitmap中的一些色彩信息
         // FIXME: 这里会卡主线程，后面最好使用线程池来做一个优化
         val palette = Palette.from(bitmap).generate(Palette.PaletteAsyncListener {
-            holder.txtFruitDesc.setBackgroundColor(it?.getLightVibrantColor(Color.WHITE) ?: Color.WHITE)
+            val baseColor = it?.getMutedColor(Color.WHITE) ?: Color.WHITE
+            val realColor = getColorWithAlpha(0.8f, baseColor)
+            holder.txtFruitDesc.setBackgroundColor(realColor)
+
+            val swatch = it?.getSwatchForTarget(Target.MUTED)
+            holder.txtFruitDesc.setTextColor(swatch?.titleTextColor ?: Color.BLACK)
         })
 
+
     }
+
+    /**
+     * 给color添加透明度
+     *
+     * @param alpha 透明度 0f～1f
+     * @param baseColor 基本颜色
+     * @return
+     */
+    fun getColorWithAlpha(alpha: Float, baseColor: Int): Int {
+        val a = min(255, max(0, (alpha * 255).toInt())) shl 24
+        val rgb = 0x00ffffff and baseColor
+        return a + rgb
+    }
+
 
     override fun getItemCount(): Int {
         return fruitImageList.size
