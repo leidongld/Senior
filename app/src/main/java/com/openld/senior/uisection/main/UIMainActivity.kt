@@ -10,6 +10,7 @@ import com.openld.senior.uisection.testnavigationview.TestNavigationViewActivity
 import com.openld.senior.uisection.testpalette.TestPaletteActivity
 import com.openld.senior.uisection.testrecyclerview.TestRecyclerViewActivity
 import com.openld.senior.uisection.testsnackbar.TestSnackBarActivity
+import com.openld.senior.uisection.testtablayout.TestTabLayoutActivity
 import com.openld.senior.uisection.testtextinputlayout.TestTextInputLayoutActivity
 import com.openld.senior.uisection.testtoolbar.TestToolBarActivity
 import com.openld.senior.utils.PageUtils
@@ -30,6 +31,8 @@ class UIMainActivity : AppCompatActivity() {
     private lateinit var mBtnCheckBox: AppCompatButton
 
     private lateinit var mBtnPalette: AppCompatButton
+
+    private lateinit var mBtnTableLayout: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,6 +75,10 @@ class UIMainActivity : AppCompatActivity() {
         mBtnPalette.setOnClickListener {
             PageUtils.jumpToPage(this, TestPaletteActivity::class.java)
         }
+
+        mBtnTableLayout.setOnClickListener {
+            PageUtils.jumpToPage(this, TestTabLayoutActivity::class.java)
+        }
     }
 
     private fun initWidgets() {
@@ -90,5 +97,7 @@ class UIMainActivity : AppCompatActivity() {
         mBtnCheckBox = findViewById(R.id.btn_checkbox)
 
         mBtnPalette = findViewById(R.id.btn_palette)
+
+        mBtnTableLayout = findViewById(R.id.btn_table_layout)
     }
 }

@@ -76,7 +76,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
-
         <activity
             android:name=".uisection.testcheckbox.TestCheckBoxActivity"
             android:exported="false"
@@ -84,15 +83,21 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-
         <activity
             android:name=".uisection.testpalette.TestPaletteActivity"
             android:exported="false"
-            android:label="测试渐变Toolbar"
             android:hardwareAccelerated="true"
+            android:label="测试渐变Toolbar"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".uisection.testtablayout.TestTabLayoutActivity"
+            android:exported="false"
+            android:label="测试TabLayout"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
     </application>
 

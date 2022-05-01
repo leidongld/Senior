@@ -39,7 +39,7 @@ class FruitImagesAdapter(@NonNull val fruitImageList: MutableList<FruitImageBean
 
         // 调色板，得到Bitmap中的一些色彩信息
         // FIXME: 这里会卡主线程，后面最好使用线程池来做一个优化
-        val palette = Palette.from(bitmap).generate(Palette.PaletteAsyncListener {
+        Palette.from(bitmap).generate(Palette.PaletteAsyncListener {
             val baseColor = it?.getMutedColor(Color.WHITE) ?: Color.WHITE
             val realColor = getColorWithAlpha(0.8f, baseColor)
             holder.txtFruitDesc.setBackgroundColor(realColor)
@@ -58,12 +58,11 @@ class FruitImagesAdapter(@NonNull val fruitImageList: MutableList<FruitImageBean
      * @param baseColor 基本颜色
      * @return
      */
-    fun getColorWithAlpha(alpha: Float, baseColor: Int): Int {
+    private fun getColorWithAlpha(alpha: Float, baseColor: Int): Int {
         val a = min(255, max(0, (alpha * 255).toInt())) shl 24
         val rgb = 0x00ffffff and baseColor
         return a + rgb
     }
-
 
     override fun getItemCount(): Int {
         return fruitImageList.size
