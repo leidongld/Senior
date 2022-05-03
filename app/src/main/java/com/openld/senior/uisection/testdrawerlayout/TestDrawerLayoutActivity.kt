@@ -12,6 +12,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import com.openld.senior.R
 
+/**
+ * 测试DrawerLayout
+ */
 class TestDrawerLayoutActivity : AppCompatActivity(), DrawerListener {
     private lateinit var mToolBar: Toolbar
 

@@ -9,6 +9,9 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.openld.senior.R
 
+/**
+ * 测试调色板效果
+ */
 class TestPaletteActivity : AppCompatActivity(), TranslucentListener {
     private lateinit var mToolbar: Toolbar
 

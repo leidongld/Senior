@@ -11,6 +11,9 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatCheckBox
 import com.openld.senior.R
 
+/**
+ * 测试CheckBox
+ */
 class TestCheckBoxActivity : AppCompatActivity(), Animation.AnimationListener {
     private lateinit var mCbx: AppCompatCheckBox
 

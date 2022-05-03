@@ -9,7 +9,10 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import com.openld.senior.R
 
-class TestToolBarActivity : AppCompatActivity() {
+/**
+ * 测试Toolbar
+ */
+class TestToolbarActivity : AppCompatActivity() {
     private lateinit var mToolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {

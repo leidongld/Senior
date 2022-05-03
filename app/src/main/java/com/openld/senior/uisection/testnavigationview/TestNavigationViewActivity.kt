@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.navigation.NavigationView
 import com.openld.senior.R
 
+/**
+ * 测试NavigationView
+ */
 class TestNavigationViewActivity : AppCompatActivity() {
     private lateinit var mNavigation: NavigationView
 

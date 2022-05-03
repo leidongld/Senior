@@ -48,12 +48,12 @@ class TestTabLayoutActivity : AppCompatActivity() {
 
         mPagerAdapter = MyPagerAdapter(supportFragmentManager, mTabsList)
         mPager.adapter = mPagerAdapter
+//        mPager.currentItem = 1
         mTlyTabs.setupWithViewPager(mPager)
 
         for (i in 0 until mTlyTabs.tabCount) {
             val tab = mTlyTabs.getTabAt(i)
 
-//            tab?.icon = getDrawable(R.drawable.icon_lemon)
             when (i) {
                 0 -> {
                     tab?.setIcon(R.drawable.icon_peach)

@@ -9,6 +9,9 @@ import com.google.android.material.textfield.TextInputLayout
 import com.openld.senior.R
 import kotlin.math.max
 
+/**
+ * 测试TextInputLayout
+ */
 class TestTextInputLayoutActivity : AppCompatActivity() {
     private lateinit var mUsernameInputLayout: TextInputLayout
     private lateinit var mEdtUsername: AppCompatEditText

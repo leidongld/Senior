@@ -8,7 +8,10 @@ import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.snackbar.Snackbar
 import com.openld.senior.R
 
-class TestSnackBarActivity : AppCompatActivity() {
+/**
+ * 测试Snackbar
+ */
+class TestSnackbarActivity : AppCompatActivity() {
     private lateinit var mBtnShowSnackBar: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {

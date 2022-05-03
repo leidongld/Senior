@@ -7,6 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.openld.senior.ndksection.main.NDKMainActivity
+import com.openld.senior.performancesection.main.PerformanceMainActivity
+import com.openld.senior.structuresection.main.StructureMainActivity
 import com.openld.senior.uisection.main.UIMainActivity
 import com.openld.senior.utils.PageUtils
 
@@ -17,6 +20,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mLySwipeRefresh: SwipeRefreshLayout
 
     private lateinit var mBtnUI: AppCompatButton
+
+    private lateinit var mBtnPerformance: AppCompatButton
+
+    private lateinit var mBtnStructure: AppCompatButton
+
+    private lateinit var mBtnNDK: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +42,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         mBtnUI = findViewById(R.id.btn_ui)
+
+        mBtnPerformance = findViewById(R.id.btn_performance)
+
+        mBtnStructure = findViewById(R.id.btn_structure)
+
+        mBtnNDK = findViewById(R.id.btn_ndk)
     }
 
     private fun addListeners() {
@@ -45,9 +60,20 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-
         mBtnUI.setOnClickListener {
             PageUtils.jumpToPage(this, UIMainActivity::class.java)
+        }
+
+        mBtnPerformance.setOnClickListener {
+            PageUtils.jumpToPage(this, PerformanceMainActivity::class.java)
+        }
+
+        mBtnStructure.setOnClickListener {
+            PageUtils.jumpToPage(this, StructureMainActivity::class.java)
+        }
+
+        mBtnNDK.setOnClickListener {
+            PageUtils.jumpToPage(this, NDKMainActivity::class.java)
         }
     }
 }
