@@ -15,13 +15,22 @@
 
         <activity
             android:name=".ndksection.main.NDKMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".structuresection.main.StructureMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".performancesection.main.PerformanceMainActivity"
-            android:exported="false" /> <!-- 主页 -->
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" /> <!-- 主页 -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -124,9 +133,16 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".uisection.testcoordinatelayout.TestCoordinateLayoutActivity"
+            android:name=".uisection.testcoordinatorlayout.TestCoordinatorLayoutActivity"
             android:exported="false"
             android:label="测试CoordinateLayout"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".uisection.testappbarlayout.TestAppBarLayoutActivity"
+            android:exported="false"
+            android:label="测试AppBarLayout"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

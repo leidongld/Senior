@@ -4,9 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.openld.senior.R
+import com.openld.senior.uisection.testappbarlayout.TestAppBarLayoutActivity
 import com.openld.senior.uisection.testcardview.TestCardViewActivity
 import com.openld.senior.uisection.testcheckbox.TestCheckBoxActivity
-import com.openld.senior.uisection.testcoordinatelayout.TestCoordinateLayoutActivity
+import com.openld.senior.uisection.testcoordinatorlayout.TestCoordinatorLayoutActivity
 import com.openld.senior.uisection.testdrawerlayout.TestDrawerLayoutActivity
 import com.openld.senior.uisection.testimmersion.TestImmersionActivity
 import com.openld.senior.uisection.testnavigationview.TestNavigationViewActivity
@@ -46,6 +47,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnCoordinateLayout: AppCompatButton
 
+    private lateinit var mBtnAppBarLayout: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -78,7 +81,9 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnCardView = findViewById(R.id.btn_card_view)
 
-        mBtnCoordinateLayout = findViewById(R.id.btn_coordinate_layout)
+        mBtnCoordinateLayout = findViewById(R.id.btn_coordinator_layout)
+
+        mBtnAppBarLayout = findViewById(R.id.btn_app_bar_layout)
     }
 
     private fun addListeners() {
@@ -127,7 +132,11 @@ class UIMainActivity : AppCompatActivity() {
         }
 
         mBtnCoordinateLayout.setOnClickListener {
-            PageUtils.jumpToPage(this, TestCoordinateLayoutActivity::class.java)
+            PageUtils.jumpToPage(this, TestCoordinatorLayoutActivity::class.java)
+        }
+
+        mBtnAppBarLayout.setOnClickListener {
+            PageUtils.jumpToPage(this, TestAppBarLayoutActivity::class.java)
         }
     }
 }
