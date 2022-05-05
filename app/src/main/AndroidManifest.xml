@@ -145,6 +145,7 @@
             android:label="测试AppBarLayout"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.SeniorNoActionBar"
             tools:ignore="LockedOrientationActivity" />
     </application>
 

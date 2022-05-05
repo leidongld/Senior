@@ -14,4 +14,5 @@
     <color name="purple">#8E44AD</color>
     <color name="pink">#F5B7B1</color>
     <color name="iron">#34495E</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>
