@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="colorButtonNormal">@color/purple_200</item>
+        <item name="colorControlHighlight">@color/purple_700</item>
     </style>
 
     <!-- Base no action bar application theme. -->
@@ -31,7 +34,7 @@
         <!-- Customize your theme here. -->
         <!--修改导航栏主题颜色-->
         <item name="android:navigationBarColor">#E74C3C</item>
-<!--        <item name="android:windowTranslucentNavigation">true</item>-->
-<!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <!--        <item name="android:windowTranslucentNavigation">true</item>-->
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
     </style>
 </resources>

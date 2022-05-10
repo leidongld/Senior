@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".uisection.testanimation.TestAnimationActivity">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_pitaya"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_pitaya"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_grape"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_grape"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_pitaya" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_orange"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_margin="8dp"
+        android:padding="30dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_orange"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_grape" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_peach"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_margin="8dp"
+        android:padding="30dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_peach"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_orange" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

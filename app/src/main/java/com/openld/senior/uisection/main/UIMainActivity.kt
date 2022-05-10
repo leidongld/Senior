@@ -4,12 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.openld.senior.R
+import com.openld.senior.uisection.testanimation.TestAnimationActivity
 import com.openld.senior.uisection.testappbarlayout.TestAppBarLayoutActivity
+import com.openld.senior.uisection.testbehavior.TestBehaviorActivity
 import com.openld.senior.uisection.testcardview.TestCardViewActivity
 import com.openld.senior.uisection.testcheckbox.TestCheckBoxActivity
 import com.openld.senior.uisection.testcoordinatorlayout.TestCoordinatorLayoutActivity
 import com.openld.senior.uisection.testdrawerlayout.TestDrawerLayoutActivity
 import com.openld.senior.uisection.testimmersion.TestImmersionActivity
+import com.openld.senior.uisection.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.senior.uisection.testnavigationview.TestNavigationViewActivity
 import com.openld.senior.uisection.testpalette.TestPaletteActivity
 import com.openld.senior.uisection.testrecyclerview.TestRecyclerViewActivity
@@ -49,6 +52,12 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnAppBarLayout: AppCompatButton
 
+    private lateinit var mBtnBehavior: AppCompatButton
+
+    private lateinit var mBtnAnimation: AppCompatButton
+
+    private lateinit var mBtnMDAnimation: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -84,6 +93,12 @@ class UIMainActivity : AppCompatActivity() {
         mBtnCoordinateLayout = findViewById(R.id.btn_coordinator_layout)
 
         mBtnAppBarLayout = findViewById(R.id.btn_app_bar_layout)
+
+        mBtnBehavior = findViewById(R.id.btn_behavior)
+
+        mBtnAnimation = findViewById(R.id.btn_animation)
+
+        mBtnMDAnimation = findViewById(R.id.btn_md_animation)
     }
 
     private fun addListeners() {
@@ -137,6 +152,18 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnAppBarLayout.setOnClickListener {
             PageUtils.jumpToPage(this, TestAppBarLayoutActivity::class.java)
+        }
+
+        mBtnBehavior.setOnClickListener {
+            PageUtils.jumpToPage(this, TestBehaviorActivity::class.java)
+        }
+
+        mBtnAnimation.setOnClickListener {
+            PageUtils.jumpToPage(this, TestAnimationActivity::class.java)
+        }
+
+        mBtnMDAnimation.setOnClickListener {
+            PageUtils.jumpToPage(this, TestMDAnimActivity::class.java)
         }
     }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".uisection.testbehavior.TestBehaviorActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_observable"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="start"
+        android:layout_margin="8dp"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:text="按压\n一次"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_observer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="end"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:src="@drawable/icon_heart"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_behavior="com.openld.senior.uisection.testbehavior.TestBehavior"
+        tools:ignore="HardcodedText" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

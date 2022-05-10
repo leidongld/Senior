@@ -147,6 +147,27 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SeniorNoActionBar"
             tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".uisection.testbehavior.TestBehaviorActivity"
+            android:exported="false"
+            android:label="测试Behavior"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".uisection.testanimation.TestAnimationActivity"
+            android:exported="false"
+            android:label="测试属性动画"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".uisection.testmaterialdesignanimation.TestMDAnimActivity"
+            android:exported="false"
+            android:label="测试MaterialDesign动画"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

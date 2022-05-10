@@ -60,8 +60,7 @@
                 app:expandedTitleMarginBottom="30dp"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
                 app:statusBarScrim="@color/red"
-                app:title="AppBarLayout+CollapsingToolbarLayout"
-                app:titleCollapseMode="scale">
+                app:title="AppBarLayout+CollapsingToolbarLayout">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="match_parent"
