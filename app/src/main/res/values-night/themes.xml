@@ -15,6 +15,9 @@
 
         <item name="colorButtonNormal">@color/purple_200</item>
         <item name="colorControlHighlight">@color/purple_700</item>
+
+        <!--支持转场动画-->
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <!-- Base no action bar application theme. -->

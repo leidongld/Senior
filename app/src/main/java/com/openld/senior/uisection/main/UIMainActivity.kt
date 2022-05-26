@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.openld.senior.R
 import com.openld.senior.uisection.testanimation.TestAnimationActivity
+import com.openld.senior.uisection.testanimparallax.TestAnimParallaxActivity
 import com.openld.senior.uisection.testappbarlayout.TestAppBarLayoutActivity
 import com.openld.senior.uisection.testbehavior.TestBehaviorActivity
 import com.openld.senior.uisection.testcardview.TestCardViewActivity
@@ -17,9 +18,11 @@ import com.openld.senior.uisection.testnavigationview.TestNavigationViewActivity
 import com.openld.senior.uisection.testpalette.TestPaletteActivity
 import com.openld.senior.uisection.testrecyclerview.TestRecyclerViewActivity
 import com.openld.senior.uisection.testsnackbar.TestSnackbarActivity
+import com.openld.senior.uisection.testsvg.TestSVGActivity
 import com.openld.senior.uisection.testtablayout.TestTabLayoutActivity
 import com.openld.senior.uisection.testtextinputlayout.TestTextInputLayoutActivity
 import com.openld.senior.uisection.testtoolbar.TestToolbarActivity
+import com.openld.senior.uisection.testtransition.TestTransitionActivity
 import com.openld.senior.utils.PageUtils
 
 /**
@@ -57,6 +60,12 @@ class UIMainActivity : AppCompatActivity() {
     private lateinit var mBtnAnimation: AppCompatButton
 
     private lateinit var mBtnMDAnimation: AppCompatButton
+
+    private lateinit var mBtnTransition: AppCompatButton
+
+    private lateinit var mBtnSVG: AppCompatButton
+
+    private lateinit var mBtnParallaxAnim: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,6 +108,12 @@ class UIMainActivity : AppCompatActivity() {
         mBtnAnimation = findViewById(R.id.btn_animation)
 
         mBtnMDAnimation = findViewById(R.id.btn_md_animation)
+
+        mBtnTransition = findViewById(R.id.btn_transition)
+
+        mBtnSVG = findViewById(R.id.btn_svg)
+
+        mBtnParallaxAnim = findViewById(R.id.btn_parallax_anim)
     }
 
     private fun addListeners() {
@@ -164,6 +179,18 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnMDAnimation.setOnClickListener {
             PageUtils.jumpToPage(this, TestMDAnimActivity::class.java)
+        }
+
+        mBtnTransition.setOnClickListener {
+            PageUtils.jumpToPage(this, TestTransitionActivity::class.java)
+        }
+
+        mBtnSVG.setOnClickListener {
+            PageUtils.jumpToPage(this, TestSVGActivity::class.java)
+        }
+
+        mBtnParallaxAnim.setOnClickListener {
+            PageUtils.jumpToPage(this, TestAnimParallaxActivity::class.java)
         }
     }
 }
