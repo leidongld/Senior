@@ -12,6 +12,7 @@ import com.openld.senior.uisection.testcardview.TestCardViewActivity
 import com.openld.senior.uisection.testcheckbox.TestCheckBoxActivity
 import com.openld.senior.uisection.testcoordinatorlayout.TestCoordinatorLayoutActivity
 import com.openld.senior.uisection.testdrawerlayout.TestDrawerLayoutActivity
+import com.openld.senior.uisection.testevent.TestEventActivity
 import com.openld.senior.uisection.testimmersion.TestImmersionActivity
 import com.openld.senior.uisection.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.senior.uisection.testnavigationview.TestNavigationViewActivity
@@ -67,6 +68,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnParallaxAnim: AppCompatButton
 
+    private lateinit var mBtnEvent: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -114,6 +117,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnSVG = findViewById(R.id.btn_svg)
 
         mBtnParallaxAnim = findViewById(R.id.btn_parallax_anim)
+
+        mBtnEvent = findViewById(R.id.btn_event)
     }
 
     private fun addListeners() {
@@ -191,6 +196,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnParallaxAnim.setOnClickListener {
             PageUtils.jumpToPage(this, TestAnimParallaxActivity::class.java)
+        }
+
+        mBtnEvent.setOnClickListener {
+            PageUtils.jumpToPage(this, TestEventActivity::class.java)
         }
     }
 }

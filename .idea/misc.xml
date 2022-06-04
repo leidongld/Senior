@@ -23,6 +23,7 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_coordinate_layout.xml" value="0.2947916666666667" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_coordinator_layout.xml" value="0.264" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_drawer_layout.xml" value="0.2" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_event.xml" value="0.152" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_immersion.xml" value="0.2947232947232947" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_mdanim.xml" value="0.18110435663627153" />
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/layout/activity_test_navigation_view.xml" value="0.2" />
@@ -51,6 +52,11 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/src/main/res/menu/toolbar_menu.xml" value="0.1" />
       </map>
     </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="android.annotation.SuppressLint" />
+    </list>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
