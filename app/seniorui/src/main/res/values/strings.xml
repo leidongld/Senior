@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Senior</string>
+    <string name="drawer_open">侧滑打开</string>
+    <string name="drawer_close">侧滑关闭</string>
+</resources>

@@ -5,6 +5,11 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
 }
 
+// 现在这种方式引不进去ext
+apply {
+    file('./config.gradle')
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

@@ -12,9 +12,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app/seniorndk" />
+            <option value="$PROJECT_DIR$/app/seniorperform" />
+            <option value="$PROJECT_DIR$/app/seniorstructure" />
+            <option value="$PROJECT_DIR$/app/seniorui" />
+            <option value="$PROJECT_DIR$/app/seniorutils" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

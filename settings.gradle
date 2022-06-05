@@ -14,3 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Senior"
 include ':app'
+include ':app:seniorui'
+include ':app:seniorutils'
+include ':app:seniorstructure'
+include ':app:seniorndk'
+include ':app:seniorperform'
