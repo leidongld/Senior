@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uisection.testcheckbox.TestCheckBoxActivity">
+    tools:context=".testcheckbox.TestCheckBoxActivity">
 
+    <!--        android:button="@drawable/cbx_background" 该属性可以自定义图标-->
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/cbx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:button="@drawable/cbx_background"
         android:checked="false"
-        android:text="哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或嘻嘻嘻嘻嘻嘻嘻嘻寻寻寻寻寻寻寻寻寻寻寻寻"
+        android:text="必须勾选我啊，不勾选后果严重啊"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

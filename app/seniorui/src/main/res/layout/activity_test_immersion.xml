@@ -5,7 +5,7 @@
     android:id="@+id/cly_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uisection.testimmersion.TestImmersionActivity">
+    tools:context=".testimmersion.TestImmersionActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

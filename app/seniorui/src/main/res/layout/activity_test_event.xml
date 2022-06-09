@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.openld.senior.uisection.testevent.MyConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.openld.seniorui.testevent.MyConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mcly_contaiuner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uisection.testevent.TestEventActivity">
+    tools:context=".testevent.TestEventActivity">
 
-    <com.openld.senior.uisection.testevent.MyButton
+    <com.openld.seniorui.testevent.MyButton
         android:id="@+id/btn_click_me"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/purple_500"
         android:padding="20dp"
+        android:text="点 击 我 ， 看 日 志"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:text="点 击 我"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText"
         tools:layout_editor_absoluteY="163dp" />
-</com.openld.senior.uisection.testevent.MyConstraintLayout>
+</com.openld.seniorui.testevent.MyConstraintLayout>

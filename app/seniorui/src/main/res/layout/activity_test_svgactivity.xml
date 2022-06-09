@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uisection.testsvg.TestSVGActivity">
+    tools:context=".testsvg.TestSVGActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_svg_1"

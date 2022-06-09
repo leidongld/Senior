@@ -12,6 +12,7 @@ import com.openld.seniorui.testcardview.TestCardViewActivity
 import com.openld.seniorui.testcheckbox.TestCheckBoxActivity
 import com.openld.seniorui.testcoordinatorlayout.TestCoordinatorLayoutActivity
 import com.openld.seniorui.testdrawerlayout.TestDrawerLayoutActivity
+import com.openld.seniorui.testedttext.TestEditTextActivity
 import com.openld.seniorui.testevent.TestEventActivity
 import com.openld.seniorui.testimmersion.TestImmersionActivity
 import com.openld.seniorui.testmaterialdesignanimation.TestMDAnimActivity
@@ -70,6 +71,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnEvent: AppCompatButton
 
+    private lateinit var mBtnEditText: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -119,6 +122,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnParallaxAnim = findViewById(R.id.btn_parallax_anim)
 
         mBtnEvent = findViewById(R.id.btn_event)
+
+        mBtnEditText = findViewById(R.id.btn_edittext)
     }
 
     private fun addListeners() {
@@ -200,6 +205,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnEvent.setOnClickListener {
             PageUtils.jumpToPage(this, TestEventActivity::class.java)
+        }
+
+        mBtnEditText.setOnClickListener {
+            PageUtils.jumpToPage(this, TestEditTextActivity::class.java)
         }
     }
 }

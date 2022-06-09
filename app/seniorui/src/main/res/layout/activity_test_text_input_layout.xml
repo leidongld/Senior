@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uisection.testtextinputlayout.TestTextInputLayoutActivity">
+    tools:context=".testtextinputlayout.TestTextInputLayoutActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tily_username"

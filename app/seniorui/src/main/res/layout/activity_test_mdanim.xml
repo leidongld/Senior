@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pink"
-    tools:context=".uisection.testmaterialdesignanimation.TestMDAnimActivity">
+    tools:context=".testmaterialdesignanimation.TestMDAnimActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_water1"

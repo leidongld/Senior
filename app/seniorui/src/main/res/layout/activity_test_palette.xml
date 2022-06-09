@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uisection.testpalette.TestPaletteActivity">
+    tools:context=".testpalette.TestPaletteActivity">
 
-    <com.openld.senior.uisection.testpalette.PaletteScrollView
+    <com.openld.seniorui.testpalette.PaletteScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:spanCount="2" />
-    </com.openld.senior.uisection.testpalette.PaletteScrollView>
+    </com.openld.seniorui.testpalette.PaletteScrollView>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
