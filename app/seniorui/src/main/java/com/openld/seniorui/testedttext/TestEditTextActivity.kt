@@ -1,12 +1,14 @@
 package com.openld.seniorui.testedttext
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.TextUtils
 import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.view.autofill.AutofillValue
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -49,11 +51,19 @@ class TestEditTextActivity : AppCompatActivity() {
                 Toast.makeText(this, "提交成功", Toast.LENGTH_SHORT).show()
             }
         }
+
+        mTxt.setOnClickListener {
+            mTxt.requestFocus()
+        }
     }
 
     private fun initWidgets() {
         // 在初始化控件的时候推荐使用findViewById()而不是findViewWithTag()是因为前者更快到和有编译期检查
         mEdtInput = findViewById(R.id.edt_input)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // FIXME: 这个自动填充的API不知道究竟怎么正确地使用，后面可以再研究一下源码 
+            mEdtInput.autofill(AutofillValue.forText("这是自动填充的内容！！！"))
+        }
 
 //        mEdtInput.setHorizontallyScrolling(false)
 //        mEdtInput.setText("12345678910")
@@ -82,6 +92,7 @@ class TestEditTextActivity : AppCompatActivity() {
         mTxt.requestFocus()
 
         mBtnCommit = findViewById(R.id.btn_commit)
+        mBtnCommit.isSoundEffectsEnabled = true
 
         Log.d(
             TAG,

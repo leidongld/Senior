@@ -14,6 +14,7 @@ import com.openld.seniorui.testcoordinatorlayout.TestCoordinatorLayoutActivity
 import com.openld.seniorui.testdrawerlayout.TestDrawerLayoutActivity
 import com.openld.seniorui.testedttext.TestEditTextActivity
 import com.openld.seniorui.testevent.TestEventActivity
+import com.openld.seniorui.testgallery.TestGalleryActivity
 import com.openld.seniorui.testimmersion.TestImmersionActivity
 import com.openld.seniorui.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.seniorui.testnavigationview.TestNavigationViewActivity
@@ -73,6 +74,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnEditText: AppCompatButton
 
+    private lateinit var mBtnGallery: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -124,6 +127,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnEvent = findViewById(R.id.btn_event)
 
         mBtnEditText = findViewById(R.id.btn_edittext)
+
+        mBtnGallery = findViewById(R.id.btn_gallery)
     }
 
     private fun addListeners() {
@@ -209,6 +214,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnEditText.setOnClickListener {
             PageUtils.jumpToPage(this, TestEditTextActivity::class.java)
+        }
+
+        mBtnGallery.setOnClickListener {
+            PageUtils.jumpToPage(this, TestGalleryActivity::class.java)
         }
     }
 }

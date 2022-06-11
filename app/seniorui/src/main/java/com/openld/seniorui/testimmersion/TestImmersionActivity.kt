@@ -2,7 +2,6 @@ package com.openld.seniorui.testimmersion
 
 import android.os.Build
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -51,7 +50,7 @@ class TestImmersionActivity : AppCompatActivity() {
         mClyContainer = findViewById(R.id.cly_container)
 
         // 避免设置上方状态栏透明的时候，状态栏遮挡主体内容，如果希望
-        // 状态栏透明的时候Toolbar北京图片侵入状态栏则设置该属性为false
+        // 状态栏透明的时候Toolbar背景图片侵入状态栏则设置该属性为false
         mClyContainer.fitsSystemWindows = false
 
         mToolbar = findViewById(R.id.toolbar)
@@ -101,6 +100,8 @@ class TestImmersionActivity : AppCompatActivity() {
 
     /**
      * 修改Toolbar的背景色
+     *
+     * @param colorRes 颜色
      */
     @RequiresApi(Build.VERSION_CODES.M)
     private fun changeToolbarBackground(colorRes: Int) {

@@ -19,7 +19,6 @@
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <action android:name="com.openld.seniorui.mainpage" />
             </intent-filter>
         </activity>
@@ -28,52 +27,45 @@
             android:exported="false"
             android:label="测试RecyclerView"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试DrawerLayout -->
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testdrawerlayout.TestDrawerLayoutActivity"
             android:exported="false"
             android:label="测试DrawerLayout"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试SnackBar -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".testsnackbar.TestSnackbarActivity"
             android:exported="false"
             android:label="测试SnackBar"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试NavigationView -->
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testnavigationview.TestNavigationViewActivity"
             android:exported="false"
             android:label="测试NavigationView"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试TextInputLayout -->
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testtextinputlayout.TestTextInputLayoutActivity"
             android:exported="false"
             android:label="测试TextInputLayout"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试Toolbar -->
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testtoolbar.TestToolbarActivity"
             android:exported="false"
             android:label="测试Toolbar"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试CheckBox -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".testcheckbox.TestCheckBoxActivity"
             android:exported="false"
             android:label="测试CheckBox"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试调色板与渐变Toolbar -->
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testpalette.TestPaletteActivity"
             android:exported="false"
@@ -81,106 +73,97 @@
             android:label="测试调色板与渐变Toolbar"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试TabLayout -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".testtablayout.TestTabLayoutActivity"
             android:exported="false"
             android:label="测试TabLayout"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" /> <!-- 测试沉浸式 -->
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testimmersion.TestImmersionActivity"
             android:exported="false"
             android:label="测试沉浸式"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.SeniorNoActionBar"
-            tools:ignore="LockedOrientationActivity" />
+            android:theme="@style/Theme.SeniorNoActionBar" />
         <activity
             android:name=".testcardview.TestCardViewActivity"
             android:exported="false"
             android:label="测试CardView"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testcoordinatorlayout.TestCoordinatorLayoutActivity"
             android:exported="false"
             android:label="测试CoordinateLayout"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testappbarlayout.TestAppBarLayoutActivity"
             android:exported="false"
             android:label="测试AppBarLayout"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.SeniorNoActionBar"
-            tools:ignore="LockedOrientationActivity" />
+            android:theme="@style/Theme.SeniorNoActionBar" />
         <activity
             android:name=".testbehavior.TestBehaviorActivity"
             android:exported="false"
             android:label="测试Behavior"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testanimation.TestAnimationActivity"
             android:exported="false"
             android:label="测试属性动画"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testmaterialdesignanimation.TestMDAnimActivity"
             android:exported="false"
             android:label="测试MaterialDesign动画"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testtransition.TestTransitionActivity"
             android:exported="false"
             android:label="测试转场动画"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testtransition.TestTransitionSecondActivityActivity"
             android:exported="false"
             android:label="测试转场动画2"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testsvg.TestSVGActivity"
             android:exported="false"
             android:label="测试SVG"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testanimparallax.TestAnimParallaxActivity"
             android:exported="false"
             android:label="视差动画第1页"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testevent.TestEventActivity"
             android:exported="false"
             android:label="事件测试"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".testedttext.TestEditTextActivity"
             android:exported="false"
             android:label="测试EditText"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testgallery.TestGalleryActivity"
+            android:exported="false"
+            android:label="测试画廊"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>
