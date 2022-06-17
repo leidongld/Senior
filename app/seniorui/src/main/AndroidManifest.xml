@@ -19,6 +19,7 @@
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <action android:name="com.openld.seniorui.mainpage" />
             </intent-filter>
         </activity>
@@ -164,6 +165,18 @@
             android:name=".testgallery.TestGalleryActivity"
             android:exported="false"
             android:label="测试画廊"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testtagcontainer.TestTagContainerActivity"
+            android:exported="false"
+            android:label="测试TagContainer"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testinflate.TestInflateActivity"
+            android:exported="false"
+            android:label="测试LayoutInflater.inflate()"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

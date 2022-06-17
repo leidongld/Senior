@@ -1,9 +1,13 @@
 package com.openld.seniorui.testgallery
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.os.Message
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.ViewPager
 import com.openld.seniorui.R
 import java.util.*
@@ -16,7 +20,13 @@ class TestGalleryActivity : AppCompatActivity() {
 
     private var mCurrentIndex = 0
 
+    private lateinit var mContainer: ConstraintLayout
+
     private lateinit var mGallery: ViewPager
+
+    private lateinit var mBtnJumpFirst: Button
+
+    private lateinit var mBtnLoop: Button
 
     private val mFruitList = mutableListOf<Int>()
 
@@ -60,48 +70,87 @@ class TestGalleryActivity : AppCompatActivity() {
             ) {
                 Log.d(TAG, ">>> $position")
                 mCurrentIndex = position
+
             }
 
             override fun onPageSelected(position: Int) {
+                // TODO 这里可以加一个高斯模糊效果
+                mContainer.setBackgroundResource(mFruitList[position])
             }
 
             override fun onPageScrollStateChanged(state: Int) {
             }
         })
+
+        mBtnJumpFirst.setOnClickListener {
+            scrollToFirst()
+        }
+
+        mBtnLoop.setOnClickListener {
+            loopScroll()
+        }
     }
 
     private fun initWidgets() {
-        Message.obtain()
+        mContainer = findViewById(R.id.container)
+
         mGallery = findViewById(R.id.gallery)
         val adapter = GalleryAdapter(this, mFruitList)
-        mGallery.offscreenPageLimit = mFruitList.size
+//        mGallery.offscreenPageLimit = mFruitList.size
+        mGallery.offscreenPageLimit = mFruitList.size - 1
         mGallery.adapter = adapter
         mGallery.currentItem = mFruitList.size - 1
         mGallery.setPageTransformer(false, GalleryTransformer())
+        // 一些重叠效果可以通过设置该属性为负值达到
+//        mGallery.pageMargin = -100
+        mGallery.pageMargin = 100
 
-        // 滑到第一个
-        scrollToFirst()
+        // 该属性设置两个Page之间的magin部分的图片
+//        mGallery.setPageMarginDrawable(R.drawable.fruit_image1)
 
-        // 训话滑动轮播
-        loopScroll()
+//        mGallery.drawa
+
+        // 这个属性暂时划不动
+//        mGallery.arrowScroll(View.FOCUS_RIGHT)
+//        mGallery.arrowScroll(View.FOCUS_LEFT)
+
+        mBtnJumpFirst = findViewById(R.id.btn_jump_first)
+        mBtnLoop = findViewById(R.id.btn_loop)
     }
+
+    class MyHandler(private val gallery: ViewPager) : Handler(Looper.getMainLooper()) {
+        override fun handleMessage(msg: Message) {
+            super.handleMessage(msg)
+            if (msg.what == 10086) {
+                gallery.currentItem = msg.obj as Int
+            }
+        }
+    }
+
+    private lateinit var mHandler: MyHandler
 
     /**
      * 循环滑动轮播
      */
     private fun loopScroll() {
+        mHandler = MyHandler(mGallery)
         // 轮播
-        mGallery.postDelayed({
-            val timer = Timer()
-            timer.schedule(object : TimerTask() {
-                override fun run() {
-                    if (mCurrentIndex == mFruitList.size) {
-                        mCurrentIndex = 0
-                    }
-                    mGallery.currentItem = mCurrentIndex++
+        val timer = Timer()
+        timer.schedule(object : TimerTask() {
+            override fun run() {
+                val msg = Message.obtain()
+                msg.what = 10086
+
+                if (mCurrentIndex >= mFruitList.size) {
+                    mCurrentIndex = 0
+                } else {
+                    mCurrentIndex += 1
                 }
-            }, 0, 2000)
-        }, 2200)
+
+                msg.obj = mCurrentIndex
+                mHandler.sendMessage(msg)
+            }
+        }, 0, 3000)
     }
 
     /**
@@ -109,8 +158,6 @@ class TestGalleryActivity : AppCompatActivity() {
      */
     private fun scrollToFirst() {
         // 这鬼滑动速度不知道怎么控制
-        mGallery.postDelayed({
-            mGallery.setCurrentItem(0, true)
-        }, 200)
+        mGallery.setCurrentItem(0, true)
     }
 }

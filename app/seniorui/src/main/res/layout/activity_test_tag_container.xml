@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".testtagcontainer.TestTagContainerActivity">
+
+    <com.openld.seniorui.testtagcontainer.TagContainerView
+        android:id="@+id/tag_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:tag_bg_drawable="@drawable/bg_tag"
+        app:tag_bg_drawable_selected="@drawable/bg_tag_selected"
+        app:tag_horizontal_margin="5dp"
+        app:tag_padding_horizontal="10dp"
+        app:tag_padding_vertical="2dp"
+        app:tag_text_color="@color/red"
+        app:tag_text_color_selected="@color/white"
+        app:tag_text_size="12sp"
+        app:tag_vertical_margin="5dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

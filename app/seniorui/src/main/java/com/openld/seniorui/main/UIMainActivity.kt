@@ -16,6 +16,7 @@ import com.openld.seniorui.testedttext.TestEditTextActivity
 import com.openld.seniorui.testevent.TestEventActivity
 import com.openld.seniorui.testgallery.TestGalleryActivity
 import com.openld.seniorui.testimmersion.TestImmersionActivity
+import com.openld.seniorui.testinflate.TestInflateActivity
 import com.openld.seniorui.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.seniorui.testnavigationview.TestNavigationViewActivity
 import com.openld.seniorui.testpalette.TestPaletteActivity
@@ -23,6 +24,7 @@ import com.openld.seniorui.testrecyclerview.TestRecyclerViewActivity
 import com.openld.seniorui.testsnackbar.TestSnackbarActivity
 import com.openld.seniorui.testsvg.TestSVGActivity
 import com.openld.seniorui.testtablayout.TestTabLayoutActivity
+import com.openld.seniorui.testtagcontainer.TestTagContainerActivity
 import com.openld.seniorui.testtextinputlayout.TestTextInputLayoutActivity
 import com.openld.seniorui.testtoolbar.TestToolbarActivity
 import com.openld.seniorui.testtransition.TestTransitionActivity
@@ -75,6 +77,10 @@ class UIMainActivity : AppCompatActivity() {
     private lateinit var mBtnEditText: AppCompatButton
 
     private lateinit var mBtnGallery: AppCompatButton
+
+    private lateinit var mBtnTagContainer: AppCompatButton
+
+    private lateinit var mBtnInflate: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -129,6 +135,10 @@ class UIMainActivity : AppCompatActivity() {
         mBtnEditText = findViewById(R.id.btn_edittext)
 
         mBtnGallery = findViewById(R.id.btn_gallery)
+
+        mBtnTagContainer = findViewById(R.id.btn_tag_container)
+
+        mBtnInflate = findViewById(R.id.btn_inflate)
     }
 
     private fun addListeners() {
@@ -218,6 +228,14 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnGallery.setOnClickListener {
             PageUtils.jumpToPage(this, TestGalleryActivity::class.java)
+        }
+
+        mBtnTagContainer.setOnClickListener {
+            PageUtils.jumpToPage(this, TestTagContainerActivity::class.java)
+        }
+
+        mBtnInflate.setOnClickListener {
+            PageUtils.jumpToPage(this, TestInflateActivity::class.java)
         }
     }
 }

@@ -10,6 +10,8 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorstructure/src/main/res/layout/activity_structure_main.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable-v24/cbx_background.xml" value="0.124" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/bg_marguee.xml" value="0.1085" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/bg_tag.xml" value="0.2895" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/bg_tag_selected.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_anim_parallax.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_animation.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_app_bar_layout.xml" value="0.1" />
@@ -22,6 +24,7 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_event.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_gallery.xml" value="0.25" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_immersion.xml" value="0.2817028985507246" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_inflate.xml" value="0.264" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_mdanim.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_navigation_view.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_palette.xml" value="0.1" />
@@ -29,6 +32,8 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_snack_bar.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_svgactivity.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_tab_layout.xml" value="0.13994565217391305" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_tag_cloud.xml" value="0.3338541666666667" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_tag_container.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_text_input_layout.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_tool_bar.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_transition_second_activity.xml" value="0.13994565217391305" />
@@ -44,6 +49,9 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/parallax_frag3.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/parallax_frag4.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/parallax_frag_login.xml" value="0.13994565217391305" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/tag.xml" value="0.536" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/this_is_view.xml" value="0.165234375" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/this_is_viewgroup.xml" value="0.10597826086956522" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/yyy.xml" value="0.2611111111111111" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/menu/sss.xml" value="0.237890625" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/menu/toolbar_menu.xml" value="0.3182291666666667" />

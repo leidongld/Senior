@@ -6,4 +6,16 @@
     <attr name="x_out" format="float" />
     <attr name="y_in" format="float" />
     <attr name="y_out" format="float" />
+
+    <declare-styleable name="TagContainerView">
+        <attr name="tag_vertical_margin" format="dimension" />
+        <attr name="tag_horizontal_margin" format="dimension" />
+        <attr name="tag_text_color" format="color" />
+        <attr name="tag_padding_vertical" format="dimension" />
+        <attr name="tag_padding_horizontal" format="dimension" />
+        <attr name="tag_text_size" format="dimension" />
+        <attr name="tag_bg_drawable" format="reference" />
+        <attr name="tag_bg_drawable_selected" format="reference" />
+        <attr name="tag_text_color_selected" format="color" />
+    </declare-styleable>
 </resources>
