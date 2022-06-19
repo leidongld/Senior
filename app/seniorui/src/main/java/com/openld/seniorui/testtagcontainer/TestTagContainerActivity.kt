@@ -86,7 +86,9 @@ class TestTagContainerActivity : AppCompatActivity(), TagContainerView.OnTagClic
 
     private fun initWidgets() {
         mTagContainer = findViewById(R.id.tag_container)
-        mTagContainer.setTags(mTagList)
+        mTagContainer.post {
+            mTagContainer.setTags(mTagList)
+        }
 
         val random = Random(1)
 

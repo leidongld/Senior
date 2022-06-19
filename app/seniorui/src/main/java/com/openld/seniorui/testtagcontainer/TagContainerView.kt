@@ -8,6 +8,7 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.DragEvent
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.NonNull
@@ -183,6 +184,8 @@ class TagContainerView(context: Context?, attrs: AttributeSet?, defStyleAttr: In
         }
 
         setMeasuredDimension(mWidth, mHeight)
+
+        measureChildren(widthMeasureSpec, heightMeasureSpec)
     }
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
@@ -241,76 +244,13 @@ class TagContainerView(context: Context?, attrs: AttributeSet?, defStyleAttr: In
             }
 
             // 方式1：使用LayoutInflater添加tag
-//            val view = LayoutInflater.from(context).inflate(R.layout.tag, this, false)
-//            val txtTag = view.findViewById<TextView>(R.id.txt_tag) as TextView
-//            txtTag.tag = false
-//            txtTag.text = s
-//            txtTag.setTextColor(mTagTextColor)
-//            txtTag.textSize = mTagTextSize.toFloat()
-//            txtTag.gravity = Gravity.CENTER
-//            txtTag.background = context.getDrawable(mBgTagDrawableResId)
-//            txtTag.setOnClickListener {
-//                onTagClick(index, txtTag, s)
-//            }
-//            txtTag.setOnLongClickListener {
-//                onTagLongClick(index, txtTag, s)
-//                true
-//            }
-//            txtTag.setPadding(
-//                mTagHorizontalPadding,
-//                mTagVerticalPadding,
-//                mTagHorizontalPadding,
-//                mTagVerticalPadding
-//            )
-//
-//            val params = view.layoutParams as MarginLayoutParams
-//            params.width =
-//                2 * mTagHorizontalPadding + DisplayUtils.sp2px(
-//                    context,
-//                    mTagTextPaint.measureText(s).toInt()
-//                )
-//            params.height = mTagHeight
-//
-//            params.leftMargin = mHorizontalMargin
-//            params.rightMargin = mHorizontalMargin
-//            params.topMargin = mHorizontalMargin
-//            params.bottomMargin = mHorizontalMargin
-//            view.layoutParams = params
-//            addView(view)
-
-
-            // 方式2：动态添加tag
-            val txtTag = TextView(context)
-            // 标记默认未选中
+            val view = LayoutInflater.from(context).inflate(R.layout.tag, this, false)
+            val txtTag = view.findViewById<TextView>(R.id.txt_tag)
             txtTag.tag = false
-            txtTag.setLines(1)
-
-            val layoutParams = MarginLayoutParams(
-                2 * mTagHorizontalPadding + DisplayUtils.sp2px(
-                    context,
-                    mTagTextPaint.measureText(s).toInt()
-                ),
-                mTagHeight
-            )
-
-            layoutParams.leftMargin = mHorizontalMargin
-            layoutParams.rightMargin = mHorizontalMargin
-            layoutParams.topMargin = mVerticalMargin
-            layoutParams.bottomMargin = mVerticalMargin
-            txtTag.layoutParams = layoutParams
-
-            txtTag.setPadding(
-                mTagHorizontalPadding,
-                mTagVerticalPadding,
-                mTagHorizontalPadding,
-                mTagVerticalPadding
-            )
-
             txtTag.text = s
-            txtTag.gravity = Gravity.CENTER
-
             txtTag.setTextColor(mTagTextColor)
             txtTag.textSize = mTagTextSize.toFloat()
+            txtTag.gravity = Gravity.CENTER
             txtTag.background = context.getDrawable(mBgTagDrawableResId)
             txtTag.setOnClickListener {
                 onTagClick(index, txtTag, s)
@@ -319,7 +259,70 @@ class TagContainerView(context: Context?, attrs: AttributeSet?, defStyleAttr: In
                 onTagLongClick(index, txtTag, s)
                 true
             }
-            addView(txtTag)
+            txtTag.setPadding(
+                mTagHorizontalPadding,
+                mTagVerticalPadding,
+                mTagHorizontalPadding,
+                mTagVerticalPadding
+            )
+
+            val params = view.layoutParams as MarginLayoutParams
+            params.width =
+                2 * mTagHorizontalPadding + DisplayUtils.sp2px(
+                    context,
+                    mTagTextPaint.measureText(s).toInt()
+                )
+            params.height = mTagHeight
+
+            params.leftMargin = mHorizontalMargin
+            params.rightMargin = mHorizontalMargin
+            params.topMargin = mHorizontalMargin
+            params.bottomMargin = mHorizontalMargin
+            view.layoutParams = params
+
+            addView(view)
+
+            // 方式2：动态添加tag
+//            val txtTag = TextView(context)
+//            // 标记默认未选中
+//            txtTag.tag = false
+//            txtTag.setLines(1)
+//
+//            val layoutParams = MarginLayoutParams(
+//                2 * mTagHorizontalPadding + DisplayUtils.sp2px(
+//                    context,
+//                    mTagTextPaint.measureText(s).toInt()
+//                ),
+//                mTagHeight
+//            )
+//
+//            layoutParams.leftMargin = mHorizontalMargin
+//            layoutParams.rightMargin = mHorizontalMargin
+//            layoutParams.topMargin = mVerticalMargin
+//            layoutParams.bottomMargin = mVerticalMargin
+//            txtTag.layoutParams = layoutParams
+//
+//            txtTag.setPadding(
+//                mTagHorizontalPadding,
+//                mTagVerticalPadding,
+//                mTagHorizontalPadding,
+//                mTagVerticalPadding
+//            )
+//
+//            txtTag.text = s
+//            txtTag.gravity = Gravity.CENTER
+//
+//            txtTag.setTextColor(mTagTextColor)
+//            txtTag.textSize = mTagTextSize.toFloat()
+//            txtTag.background = context.getDrawable(mBgTagDrawableResId)
+//            txtTag.setOnClickListener {
+//                onTagClick(index, txtTag, s)
+//            }
+//            txtTag.setOnLongClickListener {
+//                onTagLongClick(index, txtTag, s)
+//                true
+//            }
+//            addView(txtTag)
         }
     }
 
