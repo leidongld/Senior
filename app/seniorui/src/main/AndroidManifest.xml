@@ -9,7 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Senior"
         tools:ignore="MissingApplicationIcon">
-
+        <activity
+            android:name=".TestSwitcherActivity"
+            android:exported="false" />
         <activity
             android:name=".main.UIMainActivity"
             android:exported="true"

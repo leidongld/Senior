@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,7 +49,16 @@ class FruitImagesAdapter(@NonNull val fruitImageList: MutableList<FruitImageBean
             holder.txtFruitDesc.setTextColor(swatch?.titleTextColor ?: Color.BLACK)
         })
 
-
+        // 这里验证的是holder之间设置监听器不会相互影响的
+        if (position % 2 == 0) {
+            holder.imgFruit.setOnClickListener {
+                Log.d(">>>>>>", "点击了第${position}个条目")
+            }
+        } else {
+            if (holder.imgFruit.hasOnClickListeners()) {
+                Log.d(">>>>>>", "第${position}个条目也有点击监听")
+            }
+        }
     }
 
     /**
