@@ -9,9 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Senior"
         tools:ignore="MissingApplicationIcon">
-        <activity
-            android:name=".TestSwitcherActivity"
-            android:exported="false" />
+
         <activity
             android:name=".main.UIMainActivity"
             android:exported="true"
@@ -179,6 +177,18 @@
             android:name=".testinflate.TestInflateActivity"
             android:exported="false"
             android:label="测试LayoutInflater.inflate()"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testswitcher.TestSwitcherActivity"
+            android:exported="false"
+            android:label="测试自定义Switcher"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testslidingmenu.TestSlidingMenuActivity"
+            android:exported="false"
+            android:label="测试自定义SlidingMenuContainer"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

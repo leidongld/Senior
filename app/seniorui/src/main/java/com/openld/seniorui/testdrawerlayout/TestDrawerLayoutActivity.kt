@@ -65,9 +65,9 @@ class TestDrawerLayoutActivity : AppCompatActivity(), DrawerListener {
     override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
         val content = mDrawerLayout.getChildAt(0)
 
-        var scale = 1 - slideOffset
-        var leftScale = 1 - scale * 0.3
-        var rightScale = 0.7 + scale * 0.3
+        val scale = 1 - slideOffset
+        val leftScale = 1 - scale * 0.3
+        val rightScale = 0.7 + scale * 0.3
 
         drawerView.scaleX = leftScale.toFloat()
         drawerView.scaleY = leftScale.toFloat()
