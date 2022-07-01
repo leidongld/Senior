@@ -21,6 +21,7 @@ import com.openld.seniorui.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.seniorui.testnavigationview.TestNavigationViewActivity
 import com.openld.seniorui.testpalette.TestPaletteActivity
 import com.openld.seniorui.testrecyclerview.TestRecyclerViewActivity
+import com.openld.seniorui.testslidingitemmenu.TestSlidingItemMenuActivity
 import com.openld.seniorui.testslidingmenu.TestSlidingMenuActivity
 import com.openld.seniorui.testsnackbar.TestSnackbarActivity
 import com.openld.seniorui.testsvg.TestSVGActivity
@@ -85,6 +86,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnSlidingMenu: AppCompatButton
 
+    private lateinit var mBtnSlidingItemMenu: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -144,6 +147,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnInflate = findViewById(R.id.btn_inflate)
 
         mBtnSlidingMenu = findViewById(R.id.btn_sliding_menu)
+
+        mBtnSlidingItemMenu = findViewById(R.id.btn_sliding_item_menu)
     }
 
     private fun addListeners() {
@@ -245,6 +250,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnSlidingMenu.setOnClickListener {
             PageUtils.jumpToPage(this, TestSlidingMenuActivity::class.java)
+        }
+
+        mBtnSlidingItemMenu.setOnClickListener {
+            PageUtils.jumpToPage(this, TestSlidingItemMenuActivity::class.java)
         }
     }
 }

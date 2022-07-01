@@ -191,6 +191,12 @@
             android:label="测试自定义SlidingMenuContainer"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".testslidingitemmenu.TestSlidingItemMenuActivity"
+            android:exported="false"
+            android:label="测试SlidingItemMenu"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
