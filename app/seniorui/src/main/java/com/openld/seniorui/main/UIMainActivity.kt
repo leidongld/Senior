@@ -19,6 +19,7 @@ import com.openld.seniorui.testimmersion.TestImmersionActivity
 import com.openld.seniorui.testinflate.TestInflateActivity
 import com.openld.seniorui.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.seniorui.testnavigationview.TestNavigationViewActivity
+import com.openld.seniorui.testcircleswitcher.TestSwitchersActivity
 import com.openld.seniorui.testpalette.TestPaletteActivity
 import com.openld.seniorui.testrecyclerview.TestRecyclerViewActivity
 import com.openld.seniorui.testslidingitemmenu.TestSlidingItemMenuActivity
@@ -88,6 +89,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnSlidingItemMenu: AppCompatButton
 
+    private lateinit var mBtnPaint: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -149,6 +152,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnSlidingMenu = findViewById(R.id.btn_sliding_menu)
 
         mBtnSlidingItemMenu = findViewById(R.id.btn_sliding_item_menu)
+
+        mBtnPaint = findViewById(R.id.btn_paint)
     }
 
     private fun addListeners() {
@@ -254,6 +259,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnSlidingItemMenu.setOnClickListener {
             PageUtils.jumpToPage(this, TestSlidingItemMenuActivity::class.java)
+        }
+
+        mBtnPaint.setOnClickListener {
+            PageUtils.jumpToPage(this, TestSwitchersActivity::class.java)
         }
     }
 }

@@ -348,5 +348,18 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_sliding_menu"
             tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_paint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/yellow"
+            android:text="测试Switcher"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sliding_item_menu"
+            tools:ignore="HardcodedText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

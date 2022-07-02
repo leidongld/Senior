@@ -53,12 +53,6 @@ class SlidingItemMenuLayout @JvmOverloads constructor(
         super.onLayout(changed, l, t, r, b)
     }
 
-//    override fun onFinishInflate() {
-//        super.onFinishInflate()
-//        mContentWidth = getChildAt(0).width
-//        mDelWidth = getChildAt(1).width
-//    }
-
     override fun onDragEvent(event: DragEvent?): Boolean {
         return super.onDragEvent(event)
     }
@@ -76,20 +70,18 @@ class SlidingItemMenuLayout @JvmOverloads constructor(
             }
             MotionEvent.ACTION_MOVE -> {
                 val offsetX = ev.x - mDownX
-                if (offsetX <= -mScreenWidth / 5) {// 左滑超过屏幕宽度的三分之一
+                if (offsetX <= -mScreenWidth / 5) {// 左滑超过屏幕宽度的五分之一
                     mMoveLeft = true
-                } else if (offsetX >= mScreenWidth / 5) {// 右滑超过屏幕宽度的三分之一
+                } else if (offsetX >= mScreenWidth / 5) {// 右滑超过屏幕宽度的五分之一
                     mMoveRight = true
                 } else {
                     mMoveLeft = false
                     mMoveRight = false
                 }
-//                return true
             }
             MotionEvent.ACTION_UP -> {
                 if (mMoveLeft && x >= 0) {
                     mMoveLeft = false
-//                    this.scrollTo(mScreenWidth / 4, 0)
                     val animator =
                         ObjectAnimator.ofFloat(
                             this,
@@ -114,7 +106,6 @@ class SlidingItemMenuLayout @JvmOverloads constructor(
                     animator.interpolator = OvershootInterpolator()
                     animator.duration = 300
                     animator.start()
-//                    this.scrollTo(0, 0)
                     return true
                 }
             }

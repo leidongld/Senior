@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".testcircleswitcher.TestSwitchersActivity">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="圆形开关"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/circle_switcher"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/circle_switcher"
+        app:layout_constraintTop_toTopOf="@id/circle_switcher"
+        tools:ignore="HardcodedText" />
+
+    <com.openld.seniorui.testcircleswitcher.CircleSwitcher
+        android:id="@+id/circle_switcher"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        app:checked="false"
+        app:close_color="#ffff6347"
+        app:layout_constraintLeft_toRightOf="@id/txt1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:open_color="#ff00fa9a" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="椭圆开关"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/oval_switcher"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/oval_switcher"
+        app:layout_constraintTop_toTopOf="@id/oval_switcher"
+        tools:ignore="HardcodedText" />
+
+    <com.openld.seniorui.testcircleswitcher.OvalSwitcher
+        android:id="@+id/oval_switcher"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        app:checked="false"
+        app:close_color="#ffff6347"
+        app:layout_constraintLeft_toRightOf="@id/txt2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circle_switcher"
+        app:layout_goneMarginTop="20dp"
+        app:open_color="#ff00fa9a" />
+
+
+    <com.openld.seniorui.testcircleswitcher.CircleSwitcher
+        android:id="@+id/circle_switcher_big"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        app:checked="false"
+        app:close_color="#ffff6347"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/oval_switcher"
+        app:layout_goneMarginTop="20dp"
+        app:open_color="#ff00fa9a" />
+
+    <com.openld.seniorui.testcircleswitcher.OvalSwitcher
+        android:id="@+id/oval_switcher_big"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        app:checked="false"
+        app:close_color="#ffff6347"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circle_switcher_big"
+        app:open_color="#ff00fa9a" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
