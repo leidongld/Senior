@@ -200,7 +200,14 @@
         <activity
             android:name=".testcircleswitcher.TestSwitchersActivity"
             android:exported="false"
-            android:label="测试Paint画笔"
+            android:label="测试自定义开关Switchers"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".testrotate.TestRotateActivity"
+            android:exported="false"
+            android:label="测试转圈圈"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

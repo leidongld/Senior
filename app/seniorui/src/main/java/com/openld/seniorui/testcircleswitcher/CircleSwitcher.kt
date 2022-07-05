@@ -39,16 +39,18 @@ class CircleSwitcher @JvmOverloads constructor(
 
     // 外环画笔
     private var mPaint: Paint = Paint().apply {
-        alpha = 255
         isAntiAlias = true
+        strokeCap = Paint.Cap.ROUND
         style = Paint.Style.STROKE
+        strokeJoin = Paint.Join.ROUND
     }
 
     // 内点画笔
     private var mPaintDot: Paint = Paint().apply {
-        alpha = 255
         isAntiAlias = true
+        strokeCap = Paint.Cap.ROUND
         style = Paint.Style.FILL
+        strokeJoin = Paint.Join.ROUND
     }
 
     // 是否选中的监听器

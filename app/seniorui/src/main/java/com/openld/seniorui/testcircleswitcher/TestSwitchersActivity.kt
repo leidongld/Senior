@@ -5,8 +5,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.openld.seniorui.R
 
+/**
+ * 测试自定义开关
+ */
 class TestSwitchersActivity : AppCompatActivity() {
+    // 圆形开关
     private lateinit var mCircleSwitcher: CircleSwitcher
+
+    // 椭圆形开关
     private lateinit var mOvalSwitcher: OvalSwitcher
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -43,16 +43,18 @@ class OvalSwitcher @JvmOverloads constructor(
 
     // 外环画笔
     private var mPaint: Paint = Paint().apply {
-        alpha = 255
         isAntiAlias = true
         style = Paint.Style.STROKE
+        strokeCap = Paint.Cap.ROUND
+        strokeJoin = Paint.Join.ROUND
     }
 
     // 内点画笔
     private var mPaintDot: Paint = Paint().apply {
-        alpha = 255
         isAntiAlias = true
         style = Paint.Style.FILL
+        strokeCap = Paint.Cap.ROUND
+        strokeJoin = Paint.Join.ROUND
     }
 
     // 是否选中的监听器
@@ -210,7 +212,6 @@ class OvalSwitcher @JvmOverloads constructor(
             (mHeight - 2 * mStrokeWidth) / 2,
             mPaintDot
         )
-
     }
 
     // 用户是否曾经按下了该组件

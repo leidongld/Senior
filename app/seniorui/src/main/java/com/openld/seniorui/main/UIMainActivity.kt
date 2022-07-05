@@ -10,6 +10,7 @@ import com.openld.seniorui.testappbarlayout.TestAppBarLayoutActivity
 import com.openld.seniorui.testbehavior.TestBehaviorActivity
 import com.openld.seniorui.testcardview.TestCardViewActivity
 import com.openld.seniorui.testcheckbox.TestCheckBoxActivity
+import com.openld.seniorui.testcircleswitcher.TestSwitchersActivity
 import com.openld.seniorui.testcoordinatorlayout.TestCoordinatorLayoutActivity
 import com.openld.seniorui.testdrawerlayout.TestDrawerLayoutActivity
 import com.openld.seniorui.testedttext.TestEditTextActivity
@@ -19,9 +20,9 @@ import com.openld.seniorui.testimmersion.TestImmersionActivity
 import com.openld.seniorui.testinflate.TestInflateActivity
 import com.openld.seniorui.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.seniorui.testnavigationview.TestNavigationViewActivity
-import com.openld.seniorui.testcircleswitcher.TestSwitchersActivity
 import com.openld.seniorui.testpalette.TestPaletteActivity
 import com.openld.seniorui.testrecyclerview.TestRecyclerViewActivity
+import com.openld.seniorui.testrotate.TestRotateActivity
 import com.openld.seniorui.testslidingitemmenu.TestSlidingItemMenuActivity
 import com.openld.seniorui.testslidingmenu.TestSlidingMenuActivity
 import com.openld.seniorui.testsnackbar.TestSnackbarActivity
@@ -89,7 +90,9 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnSlidingItemMenu: AppCompatButton
 
-    private lateinit var mBtnPaint: AppCompatButton
+    private lateinit var mBtnSwitcher: AppCompatButton
+
+    private lateinit var mBtnRotate: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -153,7 +156,9 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnSlidingItemMenu = findViewById(R.id.btn_sliding_item_menu)
 
-        mBtnPaint = findViewById(R.id.btn_paint)
+        mBtnSwitcher = findViewById(R.id.btn_switcher)
+
+        mBtnRotate = findViewById(R.id.btn_rotate)
     }
 
     private fun addListeners() {
@@ -261,8 +266,12 @@ class UIMainActivity : AppCompatActivity() {
             PageUtils.jumpToPage(this, TestSlidingItemMenuActivity::class.java)
         }
 
-        mBtnPaint.setOnClickListener {
+        mBtnSwitcher.setOnClickListener {
             PageUtils.jumpToPage(this, TestSwitchersActivity::class.java)
+        }
+
+        mBtnRotate.setOnClickListener {
+            PageUtils.jumpToPage(this, TestRotateActivity::class.java)
         }
     }
 }
