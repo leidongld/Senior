@@ -16,19 +16,27 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.openld.seniorstructure.mainpage" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".main.testintentbigdata.TestIntentTransBIgDataActivity"
+            android:name=".testintentbigdata.TestIntentTransBIgDataActivity"
             android:exported="false"
             android:label="测试Intent传递大数据"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".main.testintentbigdata.TestIntentTransBigDataResultActivity"
+            android:name=".testintentbigdata.TestIntentTransBigDataResultActivity"
             android:exported="false"
             android:label="测试Intent传递大数据结果页"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".testobtainviewwidth.TestObtainViewWidthActivity"
+            android:exported="false"
+            android:label="测试页面何时能拿到组件宽高"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

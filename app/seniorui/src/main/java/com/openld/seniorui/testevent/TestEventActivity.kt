@@ -27,20 +27,20 @@ class TestEventActivity : AppCompatActivity() {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun addListeners() {
-        mMclyContainer.setOnTouchListener { v, event ->
-            Toast.makeText(this, "触摸了 ViewGroup", Toast.LENGTH_SHORT).show()
-            // 这里返回true则其自身的onTouchEvent无法走到，自身的onClick方法也没法走到
-            return@setOnTouchListener true
-        }
+//        mMclyContainer.setOnTouchListener { v, event ->
+//            Toast.makeText(this, "触摸了 ViewGroup", Toast.LENGTH_SHORT).show()
+//            // 这里返回true则其自身的onTouchEvent无法走到，自身的onClick方法也没法走到
+//            return@setOnTouchListener true
+//        }
 
         mMclyContainer.setOnClickListener {
             Toast.makeText(this, "点击了 ViewGroup", Toast.LENGTH_SHORT).show()
         }
 
-        mBtnClickMe.setOnTouchListener { v, event ->
-            Toast.makeText(this, "触摸了 子View", Toast.LENGTH_SHORT).show()
-            return@setOnTouchListener false
-        }
+//        mBtnClickMe.setOnTouchListener { v, event ->
+//            Toast.makeText(this, "触摸了 子View", Toast.LENGTH_SHORT).show()
+//            return@setOnTouchListener false
+//        }
 
         mBtnClickMe.setOnClickListener {
             Toast.makeText(this, "点击了 子View", Toast.LENGTH_SHORT).show()

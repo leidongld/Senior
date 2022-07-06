@@ -3,6 +3,8 @@ package com.openld.seniorui.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.Toolbar
+import androidx.core.widget.NestedScrollView
 import com.openld.seniorui.R
 import com.openld.seniorui.testanimation.TestAnimationActivity
 import com.openld.seniorui.testanimparallax.TestAnimParallaxActivity
@@ -12,6 +14,7 @@ import com.openld.seniorui.testcardview.TestCardViewActivity
 import com.openld.seniorui.testcheckbox.TestCheckBoxActivity
 import com.openld.seniorui.testcircleswitcher.TestSwitchersActivity
 import com.openld.seniorui.testcoordinatorlayout.TestCoordinatorLayoutActivity
+import com.openld.seniorui.testdrawable.TestDrawableActivity
 import com.openld.seniorui.testdrawerlayout.TestDrawerLayoutActivity
 import com.openld.seniorui.testedttext.TestEditTextActivity
 import com.openld.seniorui.testevent.TestEventActivity
@@ -38,6 +41,10 @@ import com.openld.seniorutils.utils.PageUtils
  * 高级UI主页
  */
 class UIMainActivity : AppCompatActivity() {
+    private lateinit var mScrollContainer: NestedScrollView
+
+    private lateinit var mToolbar: Toolbar
+
     private lateinit var mBtnRecyclerView: AppCompatButton
 
     private lateinit var mBtnDrawerLayout: AppCompatButton
@@ -94,16 +101,29 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnRotate: AppCompatButton
 
+    private lateinit var mBtnCloveDrawable: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
 
         initWidgets()
+        setSupportActionBar(mToolbar)
 
         addListeners()
     }
 
     private fun initWidgets() {
+        mScrollContainer = findViewById(R.id.scroll_container)
+        mScrollContainer.post {
+            mScrollContainer.smoothScrollTo(
+                0,
+                Integer.MAX_VALUE
+            )
+        }
+
+        mToolbar = findViewById(R.id.toolbar)
+
         mBtnRecyclerView = findViewById(R.id.btn_recycler_view)
 
         mBtnDrawerLayout = findViewById(R.id.btn_drawer_layout)
@@ -159,6 +179,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnSwitcher = findViewById(R.id.btn_switcher)
 
         mBtnRotate = findViewById(R.id.btn_rotate)
+
+        mBtnCloveDrawable = findViewById(R.id.btn_clove_drawable)
     }
 
     private fun addListeners() {
@@ -272,6 +294,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnRotate.setOnClickListener {
             PageUtils.jumpToPage(this, TestRotateActivity::class.java)
+        }
+
+        mBtnCloveDrawable.setOnClickListener {
+            PageUtils.jumpToPage(this, TestDrawableActivity::class.java)
         }
     }
 }

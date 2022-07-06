@@ -1,4 +1,4 @@
-package com.openld.seniorstructure.main.testintentbigdata
+package com.openld.seniorstructure.testintentbigdata
 
 import android.content.Intent
 import android.os.Binder

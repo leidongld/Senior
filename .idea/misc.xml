@@ -10,11 +10,13 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorstructure/src/main/res/layout/activity_structure_main.xml" value="0.2" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorstructure/src/main/res/layout/activity_test_intent_trans_big_data.xml" value="0.176" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorstructure/src/main/res/layout/activity_test_intent_trans_big_data_result.xml" value="0.176" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorstructure/src/main/res/layout/activity_test_obtain_view_width.xml" value="0.375" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable-v24/cbx_background.xml" value="0.124" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable-v24/ic_cow.xml" value="0.134" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/bg_marguee.xml" value="0.1085" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/bg_tag.xml" value="0.2895" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/bg_tag_selected.xml" value="0.1" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/ic_candou.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/drawable/ic_dot.xml" value="0.321" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_anim_parallax.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_animation.xml" value="0.13994565217391305" />
@@ -23,6 +25,7 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_card_view.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_check_box.xml" value="0.1875" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_coordinator_layout.xml" value="0.11927083333333334" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_drawable.xml" value="0.152" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_drawer_layout.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_edit_text.xml" value="0.176" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_event.xml" value="0.13994565217391305" />
@@ -47,7 +50,7 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_tool_bar.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_transition_second_activity.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_transmition.xml" value="0.13994565217391305" />
-        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_uimain.xml" value="0.17153284671532848" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_uimain.xml" value="0.17192982456140352" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/fragment_tab.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/item_fruit_image.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/item_gallery.xml" value="0.2" />

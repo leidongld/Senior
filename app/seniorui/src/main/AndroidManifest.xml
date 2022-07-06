@@ -152,7 +152,7 @@
         <activity
             android:name=".testevent.TestEventActivity"
             android:exported="false"
-            android:label="事件测试"
+            android:label="事件Event测试"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
@@ -203,11 +203,16 @@
             android:label="测试自定义开关Switchers"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".testrotate.TestRotateActivity"
             android:exported="false"
             android:label="测试转圈圈"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testdrawable.TestDrawableActivity"
+            android:exported="false"
+            android:label="测试四叶草Drawable"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,372 +9,405 @@
     android:orientation="vertical"
     tools:context="com.openld.seniorui.main.UIMainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/yellow"
+        app:title="高级UI" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下RecyclerView"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_drawer_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下DrawerLayout"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_recycler_view"
-            tools:ignore="HardcodedText" />
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_navigation_view"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下NavigationView"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_drawer_layout"
-            tools:ignore="HardcodedText" />
+            android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_snack_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下SnackBar"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_navigation_view"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下RecyclerView"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_text_input_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下TextInputLayout"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_snack_bar"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_drawer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下DrawerLayout"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_recycler_view"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下Toolbar"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_text_input_layout"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_navigation_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下NavigationView"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_drawer_layout"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_checkbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下抖动的CheckBox"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_toolbar"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_snack_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下SnackBar"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_navigation_view"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_palette"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下Pelette效果"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_checkbox"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下TextInputLayout"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_snack_bar"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_table_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下TableLayout"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_palette"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下Toolbar"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_text_input_layout"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_immersion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下沉浸式"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_table_layout"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下抖动的CheckBox"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_toolbar"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下CardView"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_immersion"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_palette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下Pelette效果"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_checkbox"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_coordinator_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下CoordinateLayout"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_card_view"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_table_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下TableLayout"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_palette"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_app_bar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下AppBarLayout"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_coordinator_layout"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_immersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下沉浸式"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_table_layout"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_behavior"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下Behavior"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_app_bar_layout"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下CardView"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_immersion"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_animation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下属性动画"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_behavior"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_coordinator_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下CoordinateLayout"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_card_view"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_md_animation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下MaterialDesign动画"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_animation"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_app_bar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下AppBarLayout"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_coordinator_layout"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_transition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下转场动画"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_md_animation"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_behavior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下Behavior"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_app_bar_layout"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_svg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试一下SVG"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_transition"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下属性动画"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_behavior"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_parallax_anim"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试视差动画"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_svg"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_md_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下MaterialDesign动画"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_animation"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_event"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试事件"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_parallax_anim"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_transition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下转场动画"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_md_animation"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试EditText"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_event"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_svg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试一下SVG"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_transition"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_gallery"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试Gallery"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_edittext"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_parallax_anim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试视差动画"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_svg"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_tag_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="TagContainerView"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_gallery"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试事件"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_parallax_anim"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_inflate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试LayoutInflater.inflate"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_tag_container"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试EditText"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_event"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_sliding_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试自定义SlidingMenuContainer"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_inflate"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试Gallery"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_edittext"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_sliding_item_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试自定义SlidingItemMenu"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_sliding_menu"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_tag_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="TagContainerView"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_gallery"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_switcher"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试Switcher"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_sliding_item_menu"
-            tools:ignore="HardcodedText" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_inflate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试LayoutInflater.inflate"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_tag_container"
+                tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_rotate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@color/yellow"
-            android:text="测试旋转绕圈圈"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_switcher"
-            tools:ignore="HardcodedText" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_sliding_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试自定义SlidingMenuContainer"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_inflate"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_sliding_item_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试自定义SlidingItemMenu"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sliding_menu"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_switcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试Switcher"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sliding_item_menu"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_rotate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试旋转绕圈圈"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_switcher"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_clove_drawable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/yellow"
+                android:text="测试旋转绕圈圈"
+                android:textAllCaps="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_switcher"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
