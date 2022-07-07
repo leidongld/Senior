@@ -18,6 +18,7 @@ import com.openld.seniorui.testdrawable.TestDrawableActivity
 import com.openld.seniorui.testdrawerlayout.TestDrawerLayoutActivity
 import com.openld.seniorui.testedttext.TestEditTextActivity
 import com.openld.seniorui.testevent.TestEventActivity
+import com.openld.seniorui.testflashlight.TestFlashLightActivity
 import com.openld.seniorui.testgallery.TestGalleryActivity
 import com.openld.seniorui.testimmersion.TestImmersionActivity
 import com.openld.seniorui.testinflate.TestInflateActivity
@@ -103,6 +104,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnCloveDrawable: AppCompatButton
 
+    private lateinit var mBtnFlashLight: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -181,6 +184,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnRotate = findViewById(R.id.btn_rotate)
 
         mBtnCloveDrawable = findViewById(R.id.btn_clove_drawable)
+
+        mBtnFlashLight = findViewById(R.id.btn_flash_light)
     }
 
     private fun addListeners() {
@@ -298,6 +303,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnCloveDrawable.setOnClickListener {
             PageUtils.jumpToPage(this, TestDrawableActivity::class.java)
+        }
+
+        mBtnFlashLight.setOnClickListener {
+            PageUtils.jumpToPage(this, TestFlashLightActivity::class.java)
         }
     }
 }
