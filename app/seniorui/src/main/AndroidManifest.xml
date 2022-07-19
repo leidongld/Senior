@@ -218,6 +218,20 @@
         <activity
             android:name=".testflashlight.TestFlashLightActivity"
             android:exported="false"
+            android:label="手电筒"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testpaint.TestPaintActivity"
+            android:exported="false"
+            android:hardwareAccelerated="false"
+            android:label="Paint高级用法"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".testviewexposure.TestViewExposureActivity"
+            android:exported="false"
+            android:label="测试View滑入滑出可见性"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
     </application>

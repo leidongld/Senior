@@ -35,7 +35,7 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_inflate.xml" value="0.264" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_mdanim.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_navigation_view.xml" value="0.13994565217391305" />
-        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_paint.xml" value="0.17572463768115942" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_paint.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_palette.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_recycler_view.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_rotate.xml" value="0.2" />
@@ -51,6 +51,7 @@
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_tool_bar.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_transition_second_activity.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_transmition.xml" value="0.13994565217391305" />
+        <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_test_view_visible.xml" value="0.1" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/activity_uimain.xml" value="0.17192982456140352" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/fragment_tab.xml" value="0.13994565217391305" />
         <entry key="..\:/developer/Android/workspace/Senior/app/seniorui/src/main/res/layout/item_fruit_image.xml" value="0.13994565217391305" />

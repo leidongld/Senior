@@ -16,4 +16,5 @@
     <color name="iron">#34495E</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="divider">#cccccc</color>
+    <color name="gray">#aaaaaa</color>
 </resources>

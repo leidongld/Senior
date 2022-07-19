@@ -24,6 +24,7 @@ import com.openld.seniorui.testimmersion.TestImmersionActivity
 import com.openld.seniorui.testinflate.TestInflateActivity
 import com.openld.seniorui.testmaterialdesignanimation.TestMDAnimActivity
 import com.openld.seniorui.testnavigationview.TestNavigationViewActivity
+import com.openld.seniorui.testpaint.TestPaintActivity
 import com.openld.seniorui.testpalette.TestPaletteActivity
 import com.openld.seniorui.testrecyclerview.TestRecyclerViewActivity
 import com.openld.seniorui.testrotate.TestRotateActivity
@@ -36,6 +37,7 @@ import com.openld.seniorui.testtagcontainer.TestTagContainerActivity
 import com.openld.seniorui.testtextinputlayout.TestTextInputLayoutActivity
 import com.openld.seniorui.testtoolbar.TestToolbarActivity
 import com.openld.seniorui.testtransition.TestTransitionActivity
+import com.openld.seniorui.testviewexposure.TestViewExposureActivity
 import com.openld.seniorutils.utils.PageUtils
 
 /**
@@ -105,6 +107,10 @@ class UIMainActivity : AppCompatActivity() {
     private lateinit var mBtnCloveDrawable: AppCompatButton
 
     private lateinit var mBtnFlashLight: AppCompatButton
+
+    private lateinit var mBtnPaint: AppCompatButton
+
+    private lateinit var mBtnViewVisible: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -186,6 +192,10 @@ class UIMainActivity : AppCompatActivity() {
         mBtnCloveDrawable = findViewById(R.id.btn_clove_drawable)
 
         mBtnFlashLight = findViewById(R.id.btn_flash_light)
+
+        mBtnPaint = findViewById(R.id.btn_paint)
+
+        mBtnViewVisible = findViewById(R.id.btn_view_visible)
     }
 
     private fun addListeners() {
@@ -307,6 +317,14 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnFlashLight.setOnClickListener {
             PageUtils.jumpToPage(this, TestFlashLightActivity::class.java)
+        }
+
+        mBtnPaint.setOnClickListener {
+            PageUtils.jumpToPage(this, TestPaintActivity::class.java)
+        }
+
+        mBtnViewVisible.setOnClickListener {
+            PageUtils.jumpToPage(this, TestViewExposureActivity::class.java)
         }
     }
 }
