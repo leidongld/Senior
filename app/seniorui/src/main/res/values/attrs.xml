@@ -36,4 +36,10 @@
         <attr name="open_color" />
         <attr name="checked" />
     </declare-styleable>
+
+    <!--Tag星球视图-->
+    <declare-styleable name="TagPlanetView">
+        <attr name="lightColor" format="color" />
+        <attr name="darkColor" format="color" />
+    </declare-styleable>
 </resources>

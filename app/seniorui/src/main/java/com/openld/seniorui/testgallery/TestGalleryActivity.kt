@@ -6,6 +6,7 @@ import android.os.Looper
 import android.os.Message
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.ViewPager
@@ -30,6 +31,8 @@ class TestGalleryActivity : AppCompatActivity() {
 
     private val mFruitList = mutableListOf<Int>()
 
+    private var mIsFold = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_gallery)
@@ -47,18 +50,18 @@ class TestGalleryActivity : AppCompatActivity() {
         mFruitList.add(R.drawable.fruit_image3)
         mFruitList.add(R.drawable.fruit_image4)
         mFruitList.add(R.drawable.fruit_image5)
-        mFruitList.add(R.drawable.fruit_image6)
-        mFruitList.add(R.drawable.fruit_image7)
-        mFruitList.add(R.drawable.fruit_image8)
-        mFruitList.add(R.drawable.fruit_image9)
-        mFruitList.add(R.drawable.fruit_image10)
-        mFruitList.add(R.drawable.fruit_image11)
-        mFruitList.add(R.drawable.fruit_image12)
-        mFruitList.add(R.drawable.fruit_image13)
-        mFruitList.add(R.drawable.fruit_image14)
-        mFruitList.add(R.drawable.fruit_image15)
-        mFruitList.add(R.drawable.fruit_image16)
-        mFruitList.add(R.drawable.fruit_image17)
+//        mFruitList.add(R.drawable.fruit_image6)
+//        mFruitList.add(R.drawable.fruit_image7)
+//        mFruitList.add(R.drawable.fruit_image8)
+//        mFruitList.add(R.drawable.fruit_image9)
+//        mFruitList.add(R.drawable.fruit_image10)
+//        mFruitList.add(R.drawable.fruit_image11)
+//        mFruitList.add(R.drawable.fruit_image12)
+//        mFruitList.add(R.drawable.fruit_image13)
+//        mFruitList.add(R.drawable.fruit_image14)
+//        mFruitList.add(R.drawable.fruit_image15)
+//        mFruitList.add(R.drawable.fruit_image16)
+//        mFruitList.add(R.drawable.fruit_image17)
     }
 
     private fun addListeners() {
@@ -70,12 +73,14 @@ class TestGalleryActivity : AppCompatActivity() {
             ) {
                 Log.d(TAG, ">>> $position")
                 mCurrentIndex = position
-
+                if (mCurrentIndex == mFruitList.size - 1) {
+                    Toast.makeText(this@TestGalleryActivity, "到头了别滑了", Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onPageSelected(position: Int) {
                 // TODO 这里可以加一个高斯模糊效果
-                mContainer.setBackgroundResource(mFruitList[position])
+//                mContainer.setBackgroundResource(mFruitList[position])
             }
 
             override fun onPageScrollStateChanged(state: Int) {
@@ -96,6 +101,33 @@ class TestGalleryActivity : AppCompatActivity() {
 
         mGallery = findViewById(R.id.gallery)
         val adapter = GalleryAdapter(this, mFruitList)
+        adapter.mOnGalleryItemClickListener = object : OnGalleyItemClickListener {
+            override fun onGalleryItemClicked(position: Int) {
+                val count = adapter.count
+                val left = 0
+                val right = count - 1
+
+                val child = mGallery.getChildAt(0)
+                val width = child.width
+                val transformer = GalleryTransformer()
+
+                if (mIsFold) {// 当前折叠
+                    mGallery.setPageTransformer(false, transformer)
+                    transformer.mFlag = false
+                    mIsFold = !mIsFold
+                } else {// 当前展开
+                    mGallery.setPageTransformer(false, transformer)
+                    transformer.mFlag = true
+                    mIsFold = !mIsFold
+                }
+
+                mGallery.setCurrentItem(0, true)
+
+                mGallery.postOnAnimationDelayed({
+                    mGallery.setCurrentItem(position, true)
+                }, 200)
+            }
+        }
 //        mGallery.offscreenPageLimit = mFruitList.size
         mGallery.offscreenPageLimit = mFruitList.size - 1
         mGallery.adapter = adapter

@@ -10,6 +10,7 @@ import com.openld.seniorui.testanimation.TestAnimationActivity
 import com.openld.seniorui.testanimparallax.TestAnimParallaxActivity
 import com.openld.seniorui.testappbarlayout.TestAppBarLayoutActivity
 import com.openld.seniorui.testbehavior.TestBehaviorActivity
+import com.openld.seniorui.testcards.TestCardsActivity
 import com.openld.seniorui.testcardview.TestCardViewActivity
 import com.openld.seniorui.testcheckbox.TestCheckBoxActivity
 import com.openld.seniorui.testcircleswitcher.TestSwitchersActivity
@@ -38,6 +39,7 @@ import com.openld.seniorui.testtextinputlayout.TestTextInputLayoutActivity
 import com.openld.seniorui.testtoolbar.TestToolbarActivity
 import com.openld.seniorui.testtransition.TestTransitionActivity
 import com.openld.seniorui.testviewexposure.TestViewExposureActivity
+import com.openld.seniorui.testviewpropertyanimator.TestViewPropertyAnimatorActivity
 import com.openld.seniorutils.utils.PageUtils
 
 /**
@@ -111,6 +113,10 @@ class UIMainActivity : AppCompatActivity() {
     private lateinit var mBtnPaint: AppCompatButton
 
     private lateinit var mBtnViewVisible: AppCompatButton
+
+    private lateinit var mBtnViewPropertyAnimator: AppCompatButton
+
+    private lateinit var mBtnCards: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -196,6 +202,10 @@ class UIMainActivity : AppCompatActivity() {
         mBtnPaint = findViewById(R.id.btn_paint)
 
         mBtnViewVisible = findViewById(R.id.btn_view_visible)
+
+        mBtnViewPropertyAnimator = findViewById(R.id.btn_view_property_animator)
+
+        mBtnCards = findViewById(R.id.btn_cards)
     }
 
     private fun addListeners() {
@@ -325,6 +335,14 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnViewVisible.setOnClickListener {
             PageUtils.jumpToPage(this, TestViewExposureActivity::class.java)
+        }
+
+        mBtnViewPropertyAnimator.setOnClickListener {
+            PageUtils.jumpToPage(this, TestViewPropertyAnimatorActivity::class.java)
+        }
+
+        mBtnCards.setOnClickListener {
+            PageUtils.jumpToPage(this, TestCardsActivity::class.java)
         }
     }
 }

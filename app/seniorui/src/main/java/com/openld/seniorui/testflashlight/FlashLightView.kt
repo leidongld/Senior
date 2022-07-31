@@ -74,7 +74,6 @@ class FlashLightView @JvmOverloads constructor(
 
         canvas.drawColor(Color.parseColor("#aa000000"))
 
-
         val radialGradient =
             RadialGradient(mCx, mCy, RADIUS, mColorArray, null, Shader.TileMode.CLAMP)
         mLightPaint.shader = radialGradient

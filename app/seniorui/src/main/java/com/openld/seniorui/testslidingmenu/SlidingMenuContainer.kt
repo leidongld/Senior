@@ -71,7 +71,7 @@ class SlidingMenuContainer @JvmOverloads constructor(
                 val offsetX = ev.x - downX
                 if (offsetX >= mScreenWidth / 3 && downX <= mScreenWidth / 6) {
                     this.smoothScrollTo(0, 0)
-                } else {
+                } else {// 右滑
                     this.smoothScrollTo(mMenuWidth, 0)
                 }
                 return true

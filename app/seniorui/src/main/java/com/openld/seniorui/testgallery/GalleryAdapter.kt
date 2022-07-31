@@ -15,6 +15,8 @@ class GalleryAdapter(@NonNull context: Context, @NonNull fruitList: List<Int>) :
     private val mContext = context
     private var mFruitList: List<Int> = fruitList
 
+    var mOnGalleryItemClickListener: OnGalleyItemClickListener? = null
+
     override fun getCount(): Int {
         return mFruitList.size
     }
@@ -29,6 +31,7 @@ class GalleryAdapter(@NonNull context: Context, @NonNull fruitList: List<Int>) :
                 val imgFruit: AppCompatImageView = findViewById(R.id.img_fruit)
                 imgFruit.setImageResource(mFruitList[position])
                 imgFruit.setOnClickListener {
+                    mOnGalleryItemClickListener?.onGalleryItemClicked(position)
                     Toast.makeText(mContext, "点击了第${position}个图片", Toast.LENGTH_SHORT).show()
                 }
 

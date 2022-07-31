@@ -8,30 +8,20 @@ import androidx.viewpager.widget.ViewPager
  * created on: 2022/6/10 11:14
  * description:
  */
-class GalleryTransformer : ViewPager.PageTransformer {
+class GalleryTransformer2 : ViewPager.PageTransformer {
     private val MIN_SCALE = 0.5F
-
-    var mFlag = false
 
     override fun transformPage(page: View, position: Float) {
         if (position < 0F) {// 左
             page.scaleX = MIN_SCALE * position + 1.5F
             page.scaleY = MIN_SCALE * position + 1.5F
             page.alpha = MIN_SCALE * position + 1
-            if (!mFlag) {
-                page.translationX = -page.width * position * MIN_SCALE
-            } else {
-                page.translationX = page.width * position * MIN_SCALE
-            }
+            page.translationX = page.width * position * MIN_SCALE
         } else {// 右
             page.scaleX = -MIN_SCALE * position + 1.5F
             page.scaleY = -MIN_SCALE * position + 1.5F
             page.alpha = -MIN_SCALE * position + 1
-            if (!mFlag) {
-                page.translationX = -page.width * position * MIN_SCALE
-            } else {
-                page.translationX = page.width * position * MIN_SCALE
-            }
+            page.translationX = page.width * position * MIN_SCALE
         }
 
         page.elevation = page.scaleX
