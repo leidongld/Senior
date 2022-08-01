@@ -40,6 +40,7 @@ import com.openld.seniorui.testtoolbar.TestToolbarActivity
 import com.openld.seniorui.testtransition.TestTransitionActivity
 import com.openld.seniorui.testviewexposure.TestViewExposureActivity
 import com.openld.seniorui.testviewpropertyanimator.TestViewPropertyAnimatorActivity
+import com.openld.seniorui.testwave.TestWaveActivity
 import com.openld.seniorutils.utils.PageUtils
 
 /**
@@ -117,6 +118,8 @@ class UIMainActivity : AppCompatActivity() {
     private lateinit var mBtnViewPropertyAnimator: AppCompatButton
 
     private lateinit var mBtnCards: AppCompatButton
+
+    private lateinit var mBtnWave: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -206,6 +209,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnViewPropertyAnimator = findViewById(R.id.btn_view_property_animator)
 
         mBtnCards = findViewById(R.id.btn_cards)
+
+        mBtnWave = findViewById(R.id.btn_wave)
     }
 
     private fun addListeners() {
@@ -343,6 +348,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnCards.setOnClickListener {
             PageUtils.jumpToPage(this, TestCardsActivity::class.java)
+        }
+
+        mBtnWave.setOnClickListener {
+            PageUtils.jumpToPage(this, TestWaveActivity::class.java)
         }
     }
 }
