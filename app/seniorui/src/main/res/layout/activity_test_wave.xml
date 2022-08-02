@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".testwave.TestWaveActivity">
 
-    <com.openld.seniorui.testwave.WaveView
-        android:id="@+id/wave_view"
+    <com.openld.seniorui.testwave.CircleLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.openld.seniorui.testwave.WaveView
+            android:id="@+id/wave_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.openld.seniorui.testwave.CircleLinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

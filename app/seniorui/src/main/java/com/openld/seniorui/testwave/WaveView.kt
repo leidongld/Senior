@@ -2,11 +2,14 @@ package com.openld.seniorui.testwave
 
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.LinearInterpolator
+import com.openld.seniorui.R
 
 /**
  * author: lllddd
@@ -38,6 +41,9 @@ class WaveView @JvmOverloads constructor(
     private val mWavePaint1 = Paint()
     private val mWavePaint2 = Paint()
     private val mWavePaint3 = Paint()
+    private val mPaintBoat = Paint()
+
+    private var mBmpBoat: Bitmap? = null
 
     // 波浪Path
     private val mWavePath1 = Path()
@@ -48,6 +54,18 @@ class WaveView @JvmOverloads constructor(
     private var xOffset1 = -WAVE_LENGTH_1.toFloat()
     private var xOffset2 = -WAVE_LENGTH_2.toFloat()
     private var xOffset3 = -WAVE_LENGTH_2.toFloat()
+    private var boatOffset = 0
+
+    /**
+     * 设置第一个波浪的x偏移
+     *
+     * @param boatOffset x偏移
+     */
+    fun setBoatOffset(boatOffset: Int) {
+        this.boatOffset = boatOffset
+        invalidate()
+    }
+
 
     /**
      * 设置第一个波浪的x偏移
@@ -55,7 +73,7 @@ class WaveView @JvmOverloads constructor(
      * @param xOffset x偏移
      */
     fun setXOffset1(xOffset: Float) {
-        xOffset1 = xOffset
+        this.xOffset1 = xOffset
         invalidate()
     }
 
@@ -65,7 +83,7 @@ class WaveView @JvmOverloads constructor(
      * @param xOffset x偏移
      */
     fun setXOffset2(xOffset: Float) {
-        xOffset2 = xOffset
+        this.xOffset2 = xOffset
         invalidate()
     }
 
@@ -75,10 +93,11 @@ class WaveView @JvmOverloads constructor(
      * @param xOffset x偏移
      */
     fun setXOffset3(xOffset: Float) {
-        xOffset3 = xOffset
+        this.xOffset3 = xOffset
         invalidate()
     }
 
+    @SuppressLint("Recycle")
     private fun configAnimators() {
         val animator1 = ObjectAnimator.ofFloat(this, "xOffset1", 0f, 1f * WAVE_LENGTH_1)
         animator1.duration = 2600
@@ -95,9 +114,15 @@ class WaveView @JvmOverloads constructor(
         animator3.repeatCount = ValueAnimator.INFINITE
         animator3.interpolator = LinearInterpolator()
 
+        val animatorBoat = ObjectAnimator.ofInt(this, "boatOffset", 0, 100, 0)
+        animatorBoat.duration = 3000
+        animatorBoat.repeatCount = ValueAnimator.INFINITE
+        animatorBoat.interpolator = AccelerateDecelerateInterpolator()
+
         animator1.start()
         animator2.start()
         animator3.start()
+        animatorBoat.start()
     }
 
     /**
@@ -121,6 +146,8 @@ class WaveView @JvmOverloads constructor(
         mWavePaint3.isAntiAlias = true
         mWavePaint3.xfermode = PorterDuffXfermode(PorterDuff.Mode.MULTIPLY)
         mWavePaint3.style = Paint.Style.FILL_AND_STROKE
+
+        mPaintBoat.isAntiAlias = true
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -144,8 +171,35 @@ class WaveView @JvmOverloads constructor(
         drawWave1(canvas)
         drawWave2(canvas)
         drawWave3(canvas)
+        drawBoat(canvas)
     }
 
+    /**
+     * 画帆船
+     *
+     * @param canvas 画布
+     */
+    private fun drawBoat(canvas: Canvas) {
+        if (mBmpBoat == null) {
+            return
+        }
+
+        // 绘制帆船
+        val rect = Rect(
+            (mWidth / 3 - 0.8F * mBmpBoat!!.width / 2).toInt(),
+            (mHeight / 2 - 0.8F * mBmpBoat!!.height + boatOffset).toInt(),
+            (mWidth / 3 + 0.8F * mBmpBoat!!.width / 2).toInt(),
+            (mHeight / 2 + 0.8F * boatOffset).toInt()
+        )
+
+        canvas.drawBitmap(mBmpBoat!!, null, rect, mPaintBoat)
+    }
+
+    /**
+     * 画第三个波浪
+     *
+     * @param canvas 画布
+     */
     private fun drawWave3(canvas: Canvas) {
         mWavePath3.reset()
         mWavePath3.moveTo(mWaveBaseX3 + xOffset3, mWaveBaseY3.toFloat())
@@ -176,6 +230,11 @@ class WaveView @JvmOverloads constructor(
         canvas.drawPath(mWavePath3, mWavePaint3)
     }
 
+    /**
+     * 画第二个波浪
+     *
+     * @param canvas 画布
+     */
     private fun drawWave2(canvas: Canvas) {
         mWavePath2.reset()
         mWavePath2.moveTo(mWaveBaseX2 + xOffset2, mWaveBaseY2.toFloat())
@@ -206,6 +265,11 @@ class WaveView @JvmOverloads constructor(
         canvas.drawPath(mWavePath2, mWavePaint2)
     }
 
+    /**
+     * 画第一个波浪
+     *
+     * @param canvas 画布
+     */
     private fun drawWave1(canvas: Canvas) {
         mWavePath1.reset()
         mWavePath1.moveTo(mWaveBaseX1 + xOffset1, mWaveBaseY1.toFloat())
@@ -255,6 +319,9 @@ class WaveView @JvmOverloads constructor(
 
     init {
         initPaints()
+        if (context != null) {
+            mBmpBoat = BitmapFactory.decodeResource(context.resources, R.drawable.boat)
+        }
     }
 
     override fun onFinishInflate() {

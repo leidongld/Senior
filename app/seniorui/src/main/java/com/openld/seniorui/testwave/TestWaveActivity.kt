@@ -1,7 +1,7 @@
 package com.openld.seniorui.testwave
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.openld.seniorui.R
 
 class TestWaveActivity : AppCompatActivity() {
