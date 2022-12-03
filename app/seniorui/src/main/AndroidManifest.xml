@@ -258,6 +258,12 @@
             android:label="测试波浪"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".testdust.TestDustActivity"
+            android:exported="false"
+            android:label="星级尘埃"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

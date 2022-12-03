@@ -17,6 +17,7 @@ import com.openld.seniorui.testcircleswitcher.TestSwitchersActivity
 import com.openld.seniorui.testcoordinatorlayout.TestCoordinatorLayoutActivity
 import com.openld.seniorui.testdrawable.TestDrawableActivity
 import com.openld.seniorui.testdrawerlayout.TestDrawerLayoutActivity
+import com.openld.seniorui.testdust.TestDustActivity
 import com.openld.seniorui.testedttext.TestEditTextActivity
 import com.openld.seniorui.testevent.TestEventActivity
 import com.openld.seniorui.testflashlight.TestFlashLightActivity
@@ -121,6 +122,8 @@ class UIMainActivity : AppCompatActivity() {
 
     private lateinit var mBtnWave: AppCompatButton
 
+    private lateinit var mBtnDust: AppCompatButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_uimain)
@@ -211,6 +214,8 @@ class UIMainActivity : AppCompatActivity() {
         mBtnCards = findViewById(R.id.btn_cards)
 
         mBtnWave = findViewById(R.id.btn_wave)
+
+        mBtnDust = findViewById(R.id.btn_dust)
     }
 
     private fun addListeners() {
@@ -352,6 +357,10 @@ class UIMainActivity : AppCompatActivity() {
 
         mBtnWave.setOnClickListener {
             PageUtils.jumpToPage(this, TestWaveActivity::class.java)
+        }
+
+        mBtnDust.setOnClickListener {
+            PageUtils.jumpToPage(this, TestDustActivity::class.java)
         }
     }
 }
